@@ -5,9 +5,9 @@ Creator: Jonathan Bruenderman
 ## Technology stack
 
 ### Mean Stack
-* Angular Js
 * MongoDB
 * Express
+* Angular Js
 * Node Js
 
 ### Other tech/packages 
