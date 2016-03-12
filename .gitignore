@@ -1,0 +1,9 @@
+# Dependency directory
+node_modules
+node_modules/angular*
+
+# editor settings
+.vscode
+
+# Complied binary addons 
+build/Release
