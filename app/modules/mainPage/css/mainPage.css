@@ -1,0 +1,39 @@
+#page {
+  background-color: #ccc
+}
+
+#mainRegion {
+  height: 750px;
+  width: 100%;
+  background-color: #fff;
+  margin: 10px auto;
+  border: 1px solid black
+}
+
+.nav-box {
+  width: 300px;
+  height: 500px;
+  border: 1px solid #ccc;
+  float: left;
+  margin-top: 70px;
+  transition: all .2s ease-in-out; 
+
+}
+
+.nav-box:hover {
+  transform: scale(1.1);
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow:         3px 3px 5px 6px #ccc;
+}
+
+.resume {
+  margin-left: 20%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.myWork {
+  margin: 70px 100px;
+}
