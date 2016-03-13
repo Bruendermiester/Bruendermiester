@@ -1,0 +1,14 @@
+{
+  "recipes": [
+    {
+      "image": "testImage",
+      "title": "Chicken Alfrado",
+      "ingredients": [],
+      "time": "1 hour",
+      "favorites": ["Andrea", "Adam", "Ashley"],
+      "meal": "Dinner",
+      "mainIngredient": "Chicken",
+      "notes": "It is very good"
+    }
+  ]
+}
