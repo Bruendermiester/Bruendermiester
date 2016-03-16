@@ -1,0 +1,49 @@
+<header>
+  <div id="header-wrap" ng-include src="'modules/mainPage/views/header.html'">
+  </div>
+</header>
+
+
+<div id="mywork-wrapper">
+  <div id="left-column" class="column">
+    <div class="box"style="background-image: url('modules/mywork/images/Stuff-SERP-4colV2_jy.png')">
+    </div>
+    <div class="box" style="background-image: url('modules/mywork/images/EatClean.png')">
+    </div>
+    <div class="box" style="background-image: url('modules/mywork/images/DestinationWeddingMag.png')">
+    </div>
+    <div class="box" style="background-image: url('modules/mywork/images/Savear.png')">    
+    </div>
+  </div>
+  <div id="center-column" class="slider" ng-controller="sliderController">
+    <a ng-repeat="slide in slides" class="signals-slide" style="background-image: url({{slide.image}})" ng-hide="!isCurrentSlideIndex($index)"></a>
+    <a class="arrow prev" href="#" ng-click="nextSlide()"></a>
+    <a class="arrow next" href="#" ng-click="prevSlide()"></a>
+    <nav class="nav">
+        <div class="wrapper">
+            <ul class="dots">
+                <li class="dot" ng-repeat="slide in slides" ng-class="{'active':isCurrentSlideIndex($index)}"
+                      ng-click="setCurrentSlideIndex($index);">
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+  </div>
+  <div id="right-column" class="column">
+    <div class="box" style="background-image: url('modules/mywork/images/Streetchopperweb.png')">
+    </div>
+    <div class="box" style="background-image: url('modules/mywork/images/StreetchopperwebMobile.png')">
+    </div>
+    <div class="box" style="background-image: url('modules/mywork/images/Prevention.png')">
+    </div>
+    <div class="box" style="background-image: url('modules/mywork/images/Entrepreneur.png')">
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div id="footer-wrap" ng-include src="'modules/mainPage/views/footer.html'">
+  </div>
+</footer>

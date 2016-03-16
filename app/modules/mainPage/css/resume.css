@@ -1,0 +1,15 @@
+#resume-wrapper {
+  height: auto;
+  width: 100%;
+  background-color: #fff;
+  margin: 10px auto;
+  border: 1px solid black
+}
+#center {
+  margin-left: 35px;
+}
+#wrapper-resume {
+  width: 900px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+}
