@@ -5,7 +5,8 @@
   angular
   .module('myWebsite', [
     'myRoutes',
-    'slider'
+    'slider',
+    'recipeApp'
    ]);
 
 })();
