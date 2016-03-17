@@ -19,7 +19,7 @@ angular.module('recipeApp', [])
  	$scope.save = function() {
     	var recipe =     
     	{
-	      "image": "testImage",
+	      "image": "http://www.users.miamioh.edu/pauleyel/IMS222/projectOne/img/ChickenAlfrado.jpg",
 	      "title": "Chicken Alfrado",
 	      "ingredients": [],
 	      "time": "1 hour",

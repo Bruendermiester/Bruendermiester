@@ -19,7 +19,7 @@
 		<div class="card-wrapper">
 			<div ng-repeat="card in recipes">
 				<div class="full-card">
-					<div class="recipe-image"></div>
+					<div class="recipe-image" style="background-image: url({{card.image}})"></div>
 					<div class="recipe-title"><h3>{{card.title}}</h3></div>
 				</div>
 			</div>
