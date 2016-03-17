@@ -1,14 +1,33 @@
-<header>
-  <div id="header-wrap" ng-include src="'modules/mainPage/views/header.html'">
-  </div>
-</header>
+<div class="wrapper" ng-controller="recipeAppController">
+	<div id="header">
 
-<div class="recipeBody" ng-controller="recipeAppController">
+	  <h2>Jonathan Bruenderman</h2>
 
+	  <i class="fa fa-bars fa-2x" ng-click="navFunction()"></i>
+	</div>
+
+	<div class="recipeBody">
+		<div class="left-column"> 
+		</div>
+		<div class="nav" ng-class="{showNav: navClick}">
+			<div class="middleNav">
+				<a class="small-nav" href="#/resume" style="background-image: url('modules/resume/images/resumeImage.png')"> </a>
+				<a class="small-nav" href="#/myWork" style="background-image: url('modules/mainPage/images/myWork.png')"></a>
+				<a class="small-nav" href="#/recipeApp" style=""></a>			
+			 </div>
+		</div>
+		<div class="card-wrapper">
+			<div ng-repeat="card in recipes">
+				<div class="full-card">
+					<div class="recipe-image"></div>
+					<div class="recipe-title"><h3>{{card.title}}</h3></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+	  <div id="footer-wrap" ng-include src="'modules/mainPage/views/footer.html'">
+	  </div>
+	</footer>
 </div>
-
-
-<footer>
-  <div id="footer-wrap" ng-include src="'modules/mainPage/views/footer.html'">
-  </div>
-</footer>

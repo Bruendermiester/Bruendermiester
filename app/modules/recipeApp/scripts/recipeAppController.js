@@ -7,9 +7,13 @@ angular.module('recipeApp', [])
 	    	url: url
 	})
 	.then(function successCallBack(reponse) {
-        $scope.recipes = reponse;
+        $scope.recipes = reponse.data;
         console.log(reponse);
 	});
+
+	$scope.navFunction = function() {
+		$scope.navClick = !$scope.navClick;
+	}
 
  
  	$scope.save = function() {
