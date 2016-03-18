@@ -12,21 +12,20 @@ angular.module('recipeApp', [])
 		.then(function successCallBack(reponse) {
 	        $scope.recipes = reponse.data;
 		});
-	}
+	};
 
 	$scope.navFunction = function() {
 		$scope.navClick = !$scope.navClick;
-	}
+	};
 
- 	$scope.save = function() {
-
-    };
 	$scope.addRecipe = function() {
 		$scope.view = "makingRecipe";
-	}
+	};
+
 	$scope.cancel = function() {
 		$scope.view = null;
-	}
+	};
+
 	$scope.saveNewRecipe = function() {
 
 		var ingredients = ($scope.newRecipe.ingredients).split("\n");
@@ -51,7 +50,8 @@ angular.module('recipeApp', [])
     		$scope.view = null;
             $scope.recipes = reponse;
     	});		
-	}
+	};
+
 	$scope.openRecipe = function(id, destination) {
     	var url = '/api/recipes/' + id ;
  	    $http({
@@ -63,7 +63,8 @@ angular.module('recipeApp', [])
             $scope.newRecipe = reponse.data;
     	});		
 	};
-	$scope.deleteRecipe	= function(id){
+
+	$scope.deleteRecipe	= function(id) {
     	var url = '/api/recipes/' + id ;
  	    $http({
  	    	method: 'DELETE',
@@ -72,5 +73,5 @@ angular.module('recipeApp', [])
     	.then(function successCallBack(reponse) {
     		$scope.view = null;
     	});			
-	}
+	};
 });
