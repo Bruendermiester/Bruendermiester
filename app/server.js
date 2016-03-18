@@ -79,4 +79,13 @@ app.delete('/api/recipes/:recipe_id', function(req, res) {
 	})
 });
 
+app.get('/api/recipes/:recipe_id', function(req, res) {
+	apiCall.findById(req.params.recipe_id ,function(err, recipe) {
+		if(err){
+			res.send(err)
+		}
+		res.json(recipe);
+	})
+});
+
 app.listen(3000);

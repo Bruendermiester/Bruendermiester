@@ -8,26 +8,77 @@
 
 	<div class="recipeBody">
 		<div class="left-column"> 
+			<div class="add-button" ng-click="addRecipe()">
+				Add Recipe
+			</div>
 		</div>
 		<div class="nav" ng-class="{showNav: navClick}">
 			<div class="middleNav">
 				<a class="small-nav" href="#/resume" style="background-image: url('modules/resume/images/resumeImage.png')"> </a>
 				<a class="small-nav" href="#/myWork" style="background-image: url('modules/mainPage/images/myWork.png')"></a>
-				<a class="small-nav" href="#/recipeApp" style=""></a>			
+				<a class="small-nav" href="#/recipeApp" style=""></a>		
 			 </div>
 		</div>
-		<div class="card-wrapper">
-			<div ng-repeat="card in recipes">
-				<div class="full-card">
-					<div class="recipe-image" style="background-image: url({{card.image}})"></div>
-					<div class="recipe-title"><h3>{{card.title}}</h3></div>
+		<div ng-switch on="view">
+			<div ng-switch-default>
+				<div class="card-wrapper" ng-init="getRecipes()">
+					<div ng-repeat="card in recipes">
+						<div class="full-card" ng-click="openRecipe(card._id, 'displayRecipe')">
+							<div class="recipe-image" style="background-image: url({{card.image}})"></div>
+							<div class="recipe-title"><h3>{{card.title}}</h3></div>
+						</div>
+					</div>
+				</div>				
+			</div>		
+			<div ng-switch-when="makingRecipe">
+				<div class="form-wrapper">
+					<div class="settingImage" style="background-image: url({{newRecipe.image}})"></div>
+					<h3>Title</h3>
+					<form >
+						<input class="new-title" type="text" ng-model="newRecipe.title">
+					</form>
+					<h3>Image Url</h3>
+					<form >
+						<input placeholder="Example: https://www.planwallpaper.com/static/images/magic-of-blue-universe-images.jpg" class="new-title" type="text" ng-model="newRecipe.image">
+					</form>		
+					<h3>Ingrediants</h3>			
+					<form >
+						<textarea placeholder="Put each ingredient on its own line" class="new-ingredients" type="text" ng-model="newRecipe.ingredients"></textarea>
+					</form>
+					<div class="box-wrapper">
+						<div class="small-form">
+							<h3>Total Time</h3>
+							<form >
+								<input class="new-total-time" type="text" ng-model="newRecipe.totalTime"></input>
+							</form>	
+						</div>	
+						<div class="small-form">						
+							<h3>Number of Servings</h3>
+							<form >
+								<input class="new-number-servings" type="number" ng-model="newRecipe.servings"></input>
+							</form>		
+						</div>
+						<div class="save-button" ng-click="saveNewRecipe()">Save</div>
+						<div class="cancel-button" ng-click="cancel()">Cancel</div>
+					</div>		
+					<h3>Directions</h3>
+					<form >
+						<textarea class="new-directions" type="text" ng-model="newRecipe.directions"></textarea>
+					</form>
 				</div>
 			</div>
+			<div ng-switch-when="displayRecipe">
+				<div class="recipe-wrapper">
+					<div class="display-image" style="background-image: url({{newRecipe.image}})"></div>
+					<h1>{{newRecipe.title}}</h1>
+					<div class="ingredients" ng-repeat="row in newRecipe.ingredients">
+						<h2>{{row}}</h2>
+					</div>
+					<h3>{{newRecipe.description}}</h3>
+					<div class="edit-button" ng-click="openRecipe(newRecipe._id, 'makingRecipe')">Edit</div>
+					<div class="remove-button" ng-click="deleteRecipe(newRecipe._id)">Delete</div>
+				</div>
+			</div>			
 		</div>
 	</div>
-
-	<footer>
-	  <div id="footer-wrap" ng-include src="'modules/mainPage/views/footer.html'">
-	  </div>
-	</footer>
 </div>
