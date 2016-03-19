@@ -20,6 +20,7 @@ angular.module('recipeApp', [])
 
 	$scope.addRecipe = function() {
 		$scope.view = "makingRecipe";
+		$scope.newRecipe = {};
 	};
 
 	$scope.cancel = function() {

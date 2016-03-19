@@ -18,11 +18,9 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 	  title : String,
 	  ingredients :  Array,
 	  instructions : String,
-	  time : String,
-	  favorites : Array,
-      meal : String,
-      mainIngredient : String,
-   	  notes : String
+	  totalTime : String,
+	  directions: String,
+	  servings: String,
 	});
 
 app.get('/', function(req, res) {
@@ -44,11 +42,9 @@ app.post('/api/recipes', function(req, res) {
 		title: req.body.title,
 		ingredients: req.body.ingredients,
 		instructions: req.body.instructions,
-		time: req.body.time,
-		favorites: req.body.favorites,
-		meal: req.body.meal,
-		mainIngredient: req.body.mainIngredient,
-		notes: req.body.notes,
+		totalTime: req.body.totalTime,
+		directions: req.body.directions,
+		servings: req.body.servings,
 		done : true
 	}, function(err, recipe) {
 		if(err){

@@ -70,11 +70,18 @@
 			<div ng-switch-when="displayRecipe">
 				<div class="recipe-wrapper">
 					<div class="display-image" style="background-image: url({{newRecipe.image}})"></div>
-					<h1>{{newRecipe.title}}</h1>
-					<div class="ingredients" ng-repeat="row in newRecipe.ingredients">
-						<h2>{{row}}</h2>
+					<h3>Title</h3>
+					<h2>{{newRecipe.title}}</h2>
+					<h3>Ingrediants</h3>	
+					<div class="ingredients-block">
+						<div class="ingredients" ng-repeat="row in newRecipe.ingredients">
+							<h2>{{row}}</h2>
+						</div>
 					</div>
-					<h3>{{newRecipe.description}}</h3>
+					<h3>Directions</h3>
+					<div class="directions-block">
+						<h3>{{newRecipe.directions}}</h3>
+					</div>
 					<div class="edit-button" ng-click="openRecipe(newRecipe._id, 'makingRecipe')">Edit</div>
 					<div class="remove-button" ng-click="deleteRecipe(newRecipe._id)">Delete</div>
 				</div>
