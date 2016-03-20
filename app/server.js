@@ -80,7 +80,32 @@ app.get('/api/recipes/:recipe_id', function(req, res) {
 		if(err){
 			res.send(err)
 		}
+
 		res.json(recipe);
+	})
+});
+
+app.put('/api/recipes/:recipe_id', function(req, res) {
+	apiCall.findById(req.params.recipe_id ,function(err, recipe) {
+		if(err){
+			res.send(err)
+		}
+
+		recipe.image = req.body.image,
+		recipe.title = req.body.title,
+		recipe.ingredients = req.body.ingredients,
+		recipe.instructions = req.body.instructions,
+		recipe.totalTime = req.body.totalTime,
+		recipe.directions = req.body.directions,
+		recipe.servings = req.body.servings,	
+
+		recipe.save(function(err) {
+			if(err){
+				res.send(err)
+			}
+			res.json(recipe);
+		})	
+		
 	})
 });
 

@@ -27,7 +27,7 @@ angular.module('recipeApp', [])
 		$scope.view = null;
 	};
 
-	$scope.saveNewRecipe = function() {
+	$scope.saveRecipe = function(id) {
 
     	var recipe =     
     	{
@@ -39,16 +39,30 @@ angular.module('recipeApp', [])
 	      "servings": $scope.newRecipe.servings
     	};
 
-    	var url = '/api/recipes';
- 	    $http({
- 	    	method: 'POST',
- 	    	url: url,
- 	    	data : recipe
-    	})
-    	.then(function successCallBack(reponse) {
-    		$scope.view = null;
-            $scope.recipes = reponse;
-    	});		
+    	if(id) {
+	    	var url = '/api/recipes/' + id ;
+	 	    $http({
+	 	    	method: 'PUT',
+	 	    	url: url,
+	 	    	data: recipe
+	    	})
+	    	.then(function successCallBack(reponse) {
+	    		$scope.view = null;
+	    	});	
+    	}
+    	else {
+	    	var url = '/api/recipes';
+	 	    $http({
+	 	    	method: 'POST',
+	 	    	url: url,
+	 	    	data : recipe
+	    	})
+	    	.then(function successCallBack(reponse) {
+	    		$scope.view = null;
+	            $scope.recipes = reponse;
+	    	});		
+    	}
+
 	};
 
 	$scope.openRecipe = function(id, destination) {
@@ -87,4 +101,10 @@ angular.module('recipeApp', [])
     		$scope.view = null;
     	});			
 	};
+
+	$scope.editRecipe = function(id, destination) {
+		
+	}
+
+
 });
