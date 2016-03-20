@@ -3,10 +3,10 @@
 }
 
 #mainRegion {
-  height: 750px;
+  height: 850px;
   width: 100%;
   background-color: #fff;
-  margin: 10px auto;
+  margin: 0 auto;
   border: 1px solid black
 }
 

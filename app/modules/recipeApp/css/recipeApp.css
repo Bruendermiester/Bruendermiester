@@ -81,11 +81,16 @@
     color: #fff;	
     text-transform: capitalize;
     -webkit-transition: opacity .5s, -webkit-transform 2s;
-    transition: opacity .5s, transform 2s;    
+    transition: opacity .5s, transform 2s;     
 }
 .recipe-title h3{
 	text-align: center;
 	padding-top: 7px;
+ 	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;   	
+    margin: 20px auto;
+    width: 90%;    
 }
 .nav {
 	height: 0px;
