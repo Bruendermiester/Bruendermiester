@@ -1,17 +1,15 @@
 <div class="wrapper" ng-controller="recipeAppController">
 	<div id="header">
-
-	  <h2>Jonathan Bruenderman</h2>
-
+	  <div class="app-home" ng-click="cancel()"><h2>Bruendermiester</h2></div>
 	  <i class="fa fa-bars fa-2x" ng-click="navFunction()"></i>
 	</div>
 
 	<div class="recipeBody">
-		<div class="left-column"> 
+<!-- 		<div class="left-column"> 
 			<div class="add-button" ng-click="addRecipe()">
 				Add Recipe
 			</div>
-		</div>
+		</div> -->
 		<div class="nav" ng-class="{showNav: navClick}">
 			<div class="middleNav">
 				<a class="small-nav" href="#/resume" style="background-image: url('modules/resume/images/resumeImage.png')"> </a>
@@ -21,6 +19,11 @@
 		</div>
 		<div ng-switch on="view">
 			<div ng-switch-default>
+				<div class="filter-bar">
+					<div class="add-button" ng-click="addRecipe()">
+						New Recipe
+					</div>					
+				</div>
 				<div class="card-wrapper" ng-init="getRecipes()">
 					<div ng-repeat="card in recipes">
 						<div class="full-card" ng-click="openRecipe(card._id, 'displayRecipe')">
@@ -32,7 +35,26 @@
 			</div>		
 			<div ng-switch-when="makingRecipe">
 				<div class="form-wrapper">
-					<div class="settingImage" style="background-image: url({{newRecipe.image}})"></div>
+					<div class="left-box">
+						<div class="settingImage" style="background-image: url({{newRecipe.image}})">
+						</div>		
+						<div class="box-wrapper">
+							<div class="small-form">
+								<h3>Total Time</h3>
+								<form >
+									<input class="new-total-time" type="text" ng-model="newRecipe.totalTime"></input>
+								</form>	
+							</div>	
+							<div class="small-form">						
+								<h3>Number of Servings</h3>
+								<form>
+									<input class="new-number-servings" type="number" ng-model="newRecipe.servings"></input>
+								</form>		
+							</div>
+							<div class="save-button" ng-click="saveNewRecipe()">Save</div>
+							<div class="cancel-button" ng-click="cancel()">Cancel</div>
+						</div>	
+					</div>
 					<h3>Title</h3>
 					<form >
 						<input class="new-title" type="text" ng-model="newRecipe.title">
@@ -44,23 +66,7 @@
 					<h3>Ingrediants</h3>			
 					<form >
 						<textarea placeholder="Put each ingredient on its own line" class="new-ingredients" type="text" ng-model="newRecipe.ingredients"></textarea>
-					</form>
-					<div class="box-wrapper">
-						<div class="small-form">
-							<h3>Total Time</h3>
-							<form >
-								<input class="new-total-time" type="text" ng-model="newRecipe.totalTime"></input>
-							</form>	
-						</div>	
-						<div class="small-form">						
-							<h3>Number of Servings</h3>
-							<form >
-								<input class="new-number-servings" type="number" ng-model="newRecipe.servings"></input>
-							</form>		
-						</div>
-						<div class="save-button" ng-click="saveNewRecipe()">Save</div>
-						<div class="cancel-button" ng-click="cancel()">Cancel</div>
-					</div>		
+					</form>	
 					<h3>Directions</h3>
 					<form >
 						<textarea class="new-directions" type="text" ng-model="newRecipe.directions"></textarea>
