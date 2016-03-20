@@ -19,7 +19,7 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 	  ingredients :  Array,
 	  instructions : String,
 	  totalTime : String,
-	  directions: String,
+	  directions: Array,
 	  servings: String,
 	});
 

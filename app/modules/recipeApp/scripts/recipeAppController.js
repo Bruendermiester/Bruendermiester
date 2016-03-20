@@ -29,15 +29,13 @@ angular.module('recipeApp', [])
 
 	$scope.saveNewRecipe = function() {
 
-		var ingredients = ($scope.newRecipe.ingredients).split("\n");
-
     	var recipe =     
     	{
 	      "image": $scope.newRecipe.image,
 	      "title": $scope.newRecipe.title,
-	      "ingredients": ingredients,
+	      "ingredients": ($scope.newRecipe.ingredients).split("\n"),
 	      "totalTime": $scope.newRecipe.totalTime,
-	      "directions": $scope.newRecipe.directions,
+	      "directions": ($scope.newRecipe.directions).split("\n"),
 	      "servings": $scope.newRecipe.servings
     	};
 
@@ -61,7 +59,21 @@ angular.module('recipeApp', [])
     	})
     	.then(function successCallBack(reponse) {
     		$scope.view = destination;
-            $scope.newRecipe = reponse.data;
+    		$scope.newRecipe = reponse.data;
+
+    		if(destination === 'makingRecipe') {
+	    		var newString = "";
+	    		for(var x = 0; x < $scope.newRecipe.ingredients.length; x++) {
+	    			newString = newString + $scope.newRecipe.ingredients[x] + "\n";
+	    		}
+	    		$scope.newRecipe.ingredients = newString;    	
+
+	    		newString = "";
+	    		for(var x = 0; x < $scope.newRecipe.directions.length; x++) {
+	    			newString = newString + $scope.newRecipe.directions[x] + "\n";
+	    		}
+	    		$scope.newRecipe.directions = newString;  
+    		}
     	});		
 	};
 

@@ -55,41 +55,46 @@
 							<div class="cancel-button" ng-click="cancel()">Cancel</div>
 						</div>	
 					</div>
-					<h3>Title</h3>
+					<h3>Title:</h3>
 					<form >
 						<input class="new-title" type="text" ng-model="newRecipe.title">
 					</form>
-					<h3>Image Url</h3>
+					<h3>Image Url:</h3>
 					<form >
 						<input placeholder="Example: https://www.planwallpaper.com/static/images/magic-of-blue-universe-images.jpg" class="new-title" type="text" ng-model="newRecipe.image">
 					</form>		
-					<h3>Ingrediants</h3>			
+					<h3>Ingrediants:</h3>			
 					<form >
 						<textarea placeholder="Put each ingredient on its own line" class="new-ingredients" type="text" ng-model="newRecipe.ingredients"></textarea>
 					</form>	
-					<h3>Directions</h3>
+					<h3>Directions:</h3>
 					<form >
-						<textarea class="new-directions" type="text" ng-model="newRecipe.directions"></textarea>
+						<textarea placeholder="Put each direction on its own line"class="new-directions" type="text" ng-model="newRecipe.directions"></textarea>
 					</form>
 				</div>
 			</div>
 			<div ng-switch-when="displayRecipe">
 				<div class="recipe-wrapper">
-					<div class="display-image" style="background-image: url({{newRecipe.image}})"></div>
-					<h3>Title</h3>
+					<div class="left-block">
+						<div class="display-image" style="background-image: url({{newRecipe.image}})"></div>
+						<div class="edit-button" ng-click="openRecipe(newRecipe._id, 'makingRecipe')">Edit</div>
+						<div class="remove-button" ng-click="deleteRecipe(newRecipe._id)">Delete</div>
+						<div class="cancel-button" ng-click="cancel()">Cancel</div>
+					</div>
+					<h3>Title:</h3>
 					<h2>{{newRecipe.title}}</h2>
-					<h3>Ingrediants</h3>	
+					<h3>Ingrediants:</h3>	
 					<div class="ingredients-block">
 						<div class="ingredients" ng-repeat="row in newRecipe.ingredients">
 							<h2>{{row}}</h2>
 						</div>
 					</div>
-					<h3>Directions</h3>
+					<h3>Directions:</h3>
 					<div class="directions-block">
-						<h3>{{newRecipe.directions}}</h3>
+						<div class="directions" ng-repeat="rowDirections in newRecipe.directions track by $index">
+							<h3>{{$index + 1}}. {{rowDirections}}</h3>
+						</div>
 					</div>
-					<div class="edit-button" ng-click="openRecipe(newRecipe._id, 'makingRecipe')">Edit</div>
-					<div class="remove-button" ng-click="deleteRecipe(newRecipe._id)">Delete</div>
 				</div>
 			</div>			
 		</div>
