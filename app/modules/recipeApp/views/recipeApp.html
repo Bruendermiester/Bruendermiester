@@ -22,10 +22,22 @@
 				<div class="filter-bar">
 					<div class="add-button" ng-click="addRecipe()">
 						New Recipe
-					</div>					
+					</div>		
+					<form class="searchForm">
+						<input class="searchBox" placeholder="Search" ng-model="searchText"></input>
+					</form>	
+					<form class="courseForm">
+					    <select name="singleSelect" class="course-select" ng-model="filterCourse" ng-change="getRecipes(filterCourse)" >
+					      <option value="Breakfast">Breakfast</option>
+					      <option value="Lunch">Lunch</option>
+					      <option value="Dinner">Dinner</option>
+					      <option value="Desert">Desert</option>
+					      <option value="Appetizers">Appetizers</option>
+					    </select>	
+				    </form>
 				</div>
 				<div class="card-wrapper" ng-init="getRecipes()">
-					<div ng-repeat="card in recipes">
+					<div ng-repeat="card in recipes | filter:searchText">
 						<div class="full-card" ng-click="openRecipe(card._id, 'displayRecipe')">
 							<div class="recipe-image" style="background-image: url({{card.image}})"></div>
 							<div class="recipe-title"><h3>{{card.title}}</h3></div>
@@ -51,8 +63,16 @@
 									<input class="new-number-servings" type="number" ng-model="newRecipe.servings"></input>
 								</form>		
 							</div>
-							<div class="save-button" ng-click="saveRecipe(newRecipe._id)">Save</div>
-							<div class="cancel-button" ng-click="cancel()">Cancel</div>
+							<div class="small-form">						
+								<h3>Course</h3>
+							    <select name="singleSelect" class="course" ng-model="newRecipe.course">
+							      <option value="Breakfast">Breakfast</option>
+							      <option value="Lunch">Lunch</option>
+							      <option value="Dinner">Dinner</option>
+							      <option value="Desert">Desert</option>
+							      <option value="Appetizers">Appetizers</option>
+							    </select>	
+							</div>							
 						</div>	
 					</div>
 					<h3>Title:</h3>
@@ -71,6 +91,8 @@
 					<form >
 						<textarea placeholder="Put each direction on its own line"class="new-directions" type="text" ng-model="newRecipe.directions"></textarea>
 					</form>
+					<div class="save-button" ng-click="saveRecipe(newRecipe._id)">Save</div>
+					<div class="cancel-button" ng-click="cancel()">Cancel</div>
 				</div>
 			</div>
 			<div ng-switch-when="displayRecipe">

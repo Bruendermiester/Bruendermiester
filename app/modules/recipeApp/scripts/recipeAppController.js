@@ -1,7 +1,9 @@
 angular.module('recipeApp', [])
 .controller('recipeAppController', function ($scope, $http) {
 
-	$scope.getRecipes = function() {
+	$scope.getRecipes = function(filter) {
+
+		console.log(filter)
 
 		$scope.newRecipe = {};
 		var url = '/api/recipes';
@@ -29,6 +31,8 @@ angular.module('recipeApp', [])
 
 	$scope.saveRecipe = function(id) {
 
+
+
     	var recipe =     
     	{
 	      "image": $scope.newRecipe.image,
@@ -36,8 +40,11 @@ angular.module('recipeApp', [])
 	      "ingredients": ($scope.newRecipe.ingredients).split("\n"),
 	      "totalTime": $scope.newRecipe.totalTime,
 	      "directions": ($scope.newRecipe.directions).split("\n"),
-	      "servings": $scope.newRecipe.servings
+	      "servings": $scope.newRecipe.servings,
+	      "course": $scope.newRecipe.course
     	};
+
+    	console.log(recipe, $scope.newRecipe.course)
 
     	if(id) {
 	    	var url = '/api/recipes/' + id ;
@@ -105,6 +112,5 @@ angular.module('recipeApp', [])
 	$scope.editRecipe = function(id, destination) {
 		
 	}
-
 
 });
