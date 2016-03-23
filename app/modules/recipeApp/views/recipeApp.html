@@ -5,11 +5,6 @@
 	</div>
 
 	<div class="recipeBody">
-<!-- 		<div class="left-column"> 
-			<div class="add-button" ng-click="addRecipe()">
-				Add Recipe
-			</div>
-		</div> -->
 		<div class="nav" ng-class="{showNav: navClick}">
 			<div class="middleNav">
 				<a class="small-nav" href="#/resume" style="background-image: url('modules/resume/images/resumeImage.png')"> </a>
@@ -134,9 +129,22 @@
 				<div class="recipe-wrapper">
 					<div class="left-block">
 						<div class="display-image" style="background-image: url({{newRecipe.image}})"></div>
-						<div class="edit-button" ng-click="openRecipe(newRecipe._id, 'makingRecipe')">Edit</div>
-						<div class="remove-button" ng-click="deleteRecipe(newRecipe._id)">Delete</div>
-						<div class="cancel-button" ng-click="cancel()">Cancel</div>
+							<div class="small-form">
+								<h3>Total Time</h3>
+								<h2>{{newRecipe.totalTime}}</h2>
+							</div>	
+							<div class="small-form">
+								<h3>Number of Servings</h3>
+								<h2>{{newRecipe.servings}}</h2>
+							</div>	
+							<div class="small-form">
+								<h3>Course</h3>
+								<h2>{{newRecipe.course}}</h2>
+							</div>	
+							<div class="small-form">
+								<h3>Cuisine</h3>
+								<h2>{{newRecipe.cuisine}}</h2>
+							</div>								
 					</div>
 					<h3>Title:</h3>
 					<h2>{{newRecipe.title}}</h2>
@@ -152,6 +160,9 @@
 							<h3>{{$index + 1}}. {{rowDirections}}</h3>
 						</div>
 					</div>
+					<div class="edit-button" ng-click="openRecipe(newRecipe._id, 'makingRecipe')">Edit</div>
+					<div class="remove-button" ng-click="deleteRecipe(newRecipe._id)">Delete</div>
+					<div class="cancel-button" ng-click="cancel()">Cancel</div>					
 				</div>
 			</div>			
 		</div>
