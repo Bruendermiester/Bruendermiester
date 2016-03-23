@@ -110,13 +110,24 @@ angular.module('recipeApp', [])
     		if(destination === 'makingRecipe') {
 	    		var newString = "";
 	    		for(var x = 0; x < $scope.newRecipe.ingredients.length; x++) {
-	    			newString = newString + $scope.newRecipe.ingredients[x] + "\n";
+	    			if(x+1 === $scope.newRecipe.ingredients.length) {
+	    				newString = newString + $scope.newRecipe.ingredients[x];
+	    			}
+	    			else{
+	    				newString = newString + $scope.newRecipe.ingredients[x] + "\n";
+	    			}
+	    			
 	    		}
 	    		$scope.newRecipe.ingredients = newString;    	
 
 	    		newString = "";
 	    		for(var x = 0; x < $scope.newRecipe.directions.length; x++) {
-	    			newString = newString + $scope.newRecipe.directions[x] + "\n";
+	    			if(x+1 === $scope.newRecipe.directions.length) {
+	    				newString = newString + $scope.newRecipe.directions[x];
+	    			}
+	    			else{
+	    				newString = newString + $scope.newRecipe.directions[x] + "\n";
+	    			}
 	    		}
 	    		$scope.newRecipe.directions = newString;  
     		}
