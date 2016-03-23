@@ -1,26 +1,44 @@
 angular.module('recipeApp', [])
 .controller('recipeAppController', function ($scope, $http) {
 
-	$scope.getRecipes = function(filter) {
+	$scope.getRecipes = function(filterString) {
+
+		var checkForAnyfilters = filterString;
 
 		$scope.newRecipe = {};
-		var url = '/api/recipes?course=' + filter + '&count=' +filter;
-	    $http({
-	    	method: 'GET',
- 	    	headers: {
- 	    		"Content-type": "application/json"
- 	    	},
-	    	url: url
-		})
-		.then(function successCallBack(reponse) {
-	        $scope.recipes = reponse.data;
-		});
+
+		if(checkForAnyfilters) {
+			var url = '/api/recipes' + filterString;
+		    $http({
+		    	method: 'GET',
+	 	    	headers: {
+	 	    		"Content-type": "application/json"
+	 	    	},
+		    	url: url
+			})
+			.then(function successCallBack(reponse) {
+		        $scope.recipes = reponse.data;
+			});
+		}
+		else {
+			var url = '/api/recipes';
+		    $http({
+		    	method: 'GET',
+	 	    	headers: {
+	 	    		"Content-type": "application/json"
+	 	    	},
+		    	url: url
+			})
+			.then(function successCallBack(reponse) {
+		        $scope.recipes = reponse.data;
+			});			
+		}
 	};
 
-	$scope.getFilteredRecipes = function(course) {
-		var filterObject = course;
+	$scope.getFilteredRecipes = function(course, cuisine) {
+		var filterString = '?course=' + course + '&cuisine=' + cuisine;
 
-		$scope.getRecipes(filterObject);
+		$scope.getRecipes(filterString);
 	};
 
 	$scope.navFunction = function() {
@@ -46,7 +64,8 @@ angular.module('recipeApp', [])
 	      "totalTime": $scope.newRecipe.totalTime,
 	      "directions": ($scope.newRecipe.directions).split("\n"),
 	      "servings": $scope.newRecipe.servings,
-	      "course": $scope.newRecipe.course
+	      "course": $scope.newRecipe.course,
+	      "cuisine": $scope.newRecipe.cuisine
     	};
 
     	if(id) {

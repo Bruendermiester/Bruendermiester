@@ -21,7 +21,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 	  totalTime : String,
 	  directions: Array,
 	  servings: Number,
-	  course: String
+	  course: String,
+	  cuisine: String
 	});
 
 app.get('/', function(req, res) {
@@ -29,29 +30,22 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/recipes', function(req, res) {
-	if(req.query.course !== "undefined" && req.query.course !== 'All') {
+	var filterObject = {};
 
-		filterObject = {
-			course: req.query.course
+	if(req.query.cuisine != 'undefined' && req.query.cuisine) {
+		filterObject.cuisine = req.query.cuisine;
+	}
+	if(req.query.course != 'undefined' && req.query.course) {
+		filterObject.course = req.query.course;
+	}
+	
+	apiCall.find(filterObject, function(err, recipe) {
+		if(err){
+			res.send(err)
 		}
+		res.json(recipe);
+	})		
 
-
-		apiCall.find(filterObject, function(err, recipe) {
-			if(err){
-				res.send(err)
-			}
-			res.json(recipe);
-		})		
-
-	}
-	else{
-		apiCall.find(function(err, recipe) {
-			if(err){
-				res.send(err)
-			}
-			res.json(recipe);
-		})
-	}
 });
 
 app.post('/api/recipes', function(req, res) {
@@ -64,6 +58,7 @@ app.post('/api/recipes', function(req, res) {
 		directions: req.body.directions,
 		servings: req.body.servings,
 		course: req.body.course,
+		cuisine: req.body.cuisine,
 		done : true
 	}, function(err, recipe) {
 		if(err){
@@ -117,7 +112,8 @@ app.put('/api/recipes/:recipe_id', function(req, res) {
 		recipe.totalTime = req.body.totalTime,
 		recipe.directions = req.body.directions,
 		recipe.servings = req.body.servings,
-		recipe.course = req.body.course	
+		recipe.course = req.body.course,
+		recipe.cuisine = req.body.cuisine
 
 		recipe.save(function(err) {
 			if(err){
