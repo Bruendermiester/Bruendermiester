@@ -27,14 +27,16 @@
 						<input class="searchBox" placeholder="Search" ng-model="searchText"></input>
 					</form>	
 					<form class="courseForm">
-					    <select name="singleSelect" class="course-select" ng-model="filterCourse" ng-change="getRecipes(filterCourse)" >
+					    <select name="singleSelect" class="course-select" ng-model="filterCourse" ng-change="getFilteredRecipes(filterCourse)" >
+					      <option value="" disabled selected>Filter By Course</option>
+					      <option value="All">All</option>
 					      <option value="Breakfast">Breakfast</option>
 					      <option value="Lunch">Lunch</option>
 					      <option value="Dinner">Dinner</option>
 					      <option value="Desert">Desert</option>
 					      <option value="Appetizers">Appetizers</option>
 					    </select>	
-				    </form>
+				    </form>			    
 				</div>
 				<div class="card-wrapper" ng-init="getRecipes()">
 					<div ng-repeat="card in recipes | filter:searchText">

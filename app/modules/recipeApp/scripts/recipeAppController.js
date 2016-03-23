@@ -3,17 +3,24 @@ angular.module('recipeApp', [])
 
 	$scope.getRecipes = function(filter) {
 
-		console.log(filter)
-
 		$scope.newRecipe = {};
-		var url = '/api/recipes';
-		    $http({
-		    	method: 'GET',
-		    	url: url
+		var url = '/api/recipes?course=' + filter + '&count=' +filter;
+	    $http({
+	    	method: 'GET',
+ 	    	headers: {
+ 	    		"Content-type": "application/json"
+ 	    	},
+	    	url: url
 		})
 		.then(function successCallBack(reponse) {
 	        $scope.recipes = reponse.data;
 		});
+	};
+
+	$scope.getFilteredRecipes = function(course) {
+		var filterObject = course;
+
+		$scope.getRecipes(filterObject);
 	};
 
 	$scope.navFunction = function() {
@@ -31,8 +38,6 @@ angular.module('recipeApp', [])
 
 	$scope.saveRecipe = function(id) {
 
-
-
     	var recipe =     
     	{
 	      "image": $scope.newRecipe.image,
@@ -44,13 +49,14 @@ angular.module('recipeApp', [])
 	      "course": $scope.newRecipe.course
     	};
 
-    	console.log(recipe, $scope.newRecipe.course)
-
     	if(id) {
 	    	var url = '/api/recipes/' + id ;
 	 	    $http({
 	 	    	method: 'PUT',
 	 	    	url: url,
+	 	    	headers: {
+	 	    		"Content-type": "application/json"
+	 	    	},
 	 	    	data: recipe
 	    	})
 	    	.then(function successCallBack(reponse) {
@@ -108,9 +114,5 @@ angular.module('recipeApp', [])
     		$scope.view = null;
     	});			
 	};
-
-	$scope.editRecipe = function(id, destination) {
-		
-	}
 
 });

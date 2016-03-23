@@ -29,12 +29,29 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/recipes', function(req, res) {
-	apiCall.find(function(err, recipe) {
-		if(err){
-			res.send(err)
+	if(req.query.course !== "undefined" && req.query.course !== 'All') {
+
+		filterObject = {
+			course: req.query.course
 		}
-		res.json(recipe);
-	})
+
+
+		apiCall.find(filterObject, function(err, recipe) {
+			if(err){
+				res.send(err)
+			}
+			res.json(recipe);
+		})		
+
+	}
+	else{
+		apiCall.find(function(err, recipe) {
+			if(err){
+				res.send(err)
+			}
+			res.json(recipe);
+		})
+	}
 });
 
 app.post('/api/recipes', function(req, res) {
