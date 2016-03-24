@@ -2,20 +2,11 @@
 	width: 100%;
 	background: #FFF;
 }
-/*.left-column {
-	min-height: 1200px; 
-	width: 200px;
-	border-right: 1px solid #000;
-	background-color: #C4C4C4;
-	border-left: 5px solid #A42424;
-    left: -200px;
-    position: fixed;
-}*/
 .add-button {
     width: 100px;
     height: 32px;
     margin: 4px 0 0 40px;
-    background-color: #A42424;
+    background-color: #981C05;
     text-align: center;
     padding-top: 6px;
     font-weight: bold;
@@ -31,7 +22,7 @@
 	cursor: pointer;
 }
 .add-button:hover {
-	background-color: #CE0000;
+	background-color: #B8351D;
 }
 .card-wrapper {
     max-width: 1280px;
@@ -41,9 +32,6 @@
     max-width: 1260px;
     margin: 15px auto;
     height: 40px;
-    background-color: #B8B8C2;
-    border: 1px solid #02394A;
-    border-radius: 25px;
 }
 .searchBox {
 	height: 32px;
@@ -141,10 +129,12 @@ input:focus {
     width: 1250px;
     height: 800px;
 	margin: 50px auto;
-	background-color: #ccc;
 	border: 2px solid #036886;
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);	
 	padding: 25px;	
+	background-size: contain;
+	background-position: center center;  
+	background-image: url('../images/recipebg.png');	
 }
 .left-box {
 	float: left;
@@ -252,10 +242,12 @@ input:focus {
     width: 1250px;
     height: 660px;
 	margin: 50px auto;
-	background-color: #ccc;
 	border: 2px solid #036886;
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);	
 	padding: 25px;
+	background-size: contain;
+	background-position: center center;  
+	background-image: url('../images/recipebg.png');
 }
 .display-image {
 	float: left;
@@ -315,15 +307,13 @@ input:focus {
     margin: 5px 0 10px 0;
     float: left;
     width: 840px;	
-    font-style: italic;    
+    font-style: italic;   
+    padding-left: 5px; 
 }
 .ingredients-block {
-	width: 600px;
+	width: 700px;
     height: 175px;
     float: left;
-}
-.ingredients-block h2 {
-	margin: 5px 0 0 0;
 }
 .directions-block {
 	width: 800px;
@@ -331,7 +321,6 @@ input:focus {
 	float: left;
 }
 .directions-block h3 {
-	width: auto;
 	font-weight: bold;
 }
 .left-block {
@@ -344,16 +333,39 @@ input:focus {
 	width: 600px;
 	height: 20px;
 	float: left;
+	padding-left: 5px;
 }
 .course-select {
 	margin: 5px 0 0 20px;
 	height: 26px;
 	border-radius: 25px;
-	width: 200px;
+	width: 100px;
 }
 .searchForm {
 	float: right;
 }
 .courseForm {
 	float: left;
+}
+select {
+	cursor: pointer;
+}
+.recipe-wrapper .title-display {
+	font-size: 32px;
+	color: #298FA1;
+}
+.ingredients li {
+	font-size: 15px;
+	font-style: italic;   
+	text-transform: capitalize;
+	font-weight: bold;
+    width: 350px;
+    float: left;
+    padding-left: 5px;
+}
+textarea {
+	padding-left: 5px;
+}
+input {
+    padding-left: 5px;
 }
