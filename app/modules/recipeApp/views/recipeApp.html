@@ -2,6 +2,44 @@
 	<div id="header">
 	  <div class="app-home" ng-click="cancel()"><h2>Bruendermiester</h2></div>
 	  <i class="fa fa-bars fa-2x" ng-click="navFunction()"></i>
+	  <div class="filter-button" ng-click="filterClicked = !filterClicked">Filter</div>
+	</div>
+
+	<div class="flyout-menu" ng-class="{active: filterClicked}">	
+		<form class="searchForm">
+			<input class="searchBox" placeholder="Search" ng-model="searchText"></input>
+		</form>	
+		<form class="courseForm">
+		    <select name="singleSelect" class="course-select" ng-model="filterCourse" ng-change="getFilteredRecipes(filterCourse, filterCuisine)" >
+		      <option value="" disabled selected>Course</option>
+		      <option value="undefined">All</option>
+		      <option value="Breakfast">Breakfast</option>
+		      <option value="Lunch">Lunch</option>
+		      <option value="Dinner">Dinner</option>
+		      <option value="Desert">Desert</option>
+		      <option value="Appetizers">Appetizers</option>
+		    </select>	
+	    </form>
+		<form class="cuisineForm">
+		    <select name="singleSelect" class="course-select" ng-model="filterCuisine" ng-change="getFilteredRecipes(filterCourse, filterCuisine)" >
+		      <option value="" disabled selected>Cuisine</option>
+		      <option value="undefined">All</option>
+		      <option value="American">American</option>
+		      <option value="Chinese">Chinese</option>
+		      <option value="French">French</option>
+		      <option value="Greek">Greek</option>
+		      <option value="Indian">Indian</option>
+		      <option value="Italian">Italian</option>
+		      <option value="Japanese">Japanese</option>
+		      <option value="Mediterranean">Mediterranean</option>
+		      <option value="Mexican">Mexican</option>
+		      <option value="Thai">Thai</option>
+		      <option value="Vietnamese">Vietnamese</option>
+		    </select>	
+	    </form>		
+		<div class="add-button" ng-click="addRecipe()">
+			New Recipe
+		</div>		    			    			    	
 	</div>
 
 	<div class="recipeBody">

@@ -369,3 +369,66 @@ textarea {
 input {
     padding-left: 5px;
 }
+.filter-button {
+	width: 100px;
+	height: 30px;
+	display: none;
+	background-color: #981C05;
+	border-radius: 25px;
+	float: right;
+	margin: 15px 20px 0 0;
+	color: #FFF;
+	text-align: center;
+	padding-top: 5px;
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+}
+.flyout-menu {
+	width: 300px;
+	left: -300;
+	height: 600px;
+	position: fixed;
+	z-index: 5;
+    -webkit-transition: left .5s, -webkit-transform 2s;
+    transition: left .5s, transform 2s;	
+    background-color: #012632;
+    border-right: 2px solid #981C05;
+}
+.active {
+	left: 0;
+    -webkit-transition: left .5s, -webkit-transform 2s;
+    transition: left .5s, transform 2s;		
+}
+.flyout-menu .searchForm {
+	margin: 50px 50px 0 0;
+}
+.flyout-menu .course-select {
+	margin: 60px 0 0 30px;
+}
+.flyout-menu .add-button {
+    margin: 100px 0 0 97px;
+}
+@media only screen and (max-width: 700px) {
+	.filter-bar {
+		display: none;
+	}
+	.card-wrapper {
+	    max-width: 440px;
+	}	
+	.full-card {
+		margin: 5px;
+		width: 200px;
+		height: 200px;
+	}
+	.recipe-image {
+		height: 200px;
+	}
+	.recipe-title {
+		width: 200px;
+	}	
+	.filter-button {
+		display: block;
+	}
+}
+

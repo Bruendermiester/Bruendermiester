@@ -1,6 +1,8 @@
 angular.module('recipeApp', [])
 .controller('recipeAppController', function ($scope, $http) {
 
+	$scope.filterClicked = false;
+
 	$scope.getRecipes = function(filterString) {
 
 		var checkForAnyfilters = filterString;
