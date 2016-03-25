@@ -8,8 +8,14 @@
 #center {
   margin-left: 35px;
 }
-#wrapper-resume {
+.wrapper-resume {
   width: 900px;
   margin: 0 auto;
   border: 1px solid #ccc;
+}
+
+@media only screen and (max-width: 1000px) {
+	.wrapper-resume {
+		width: auto;
+	}
 }
