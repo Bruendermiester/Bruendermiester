@@ -99,68 +99,58 @@
 			</div>		
 			<div ng-switch-when="makingRecipe">
 				<div class="form-wrapper">
-					<div class="left-box">
-						<div class="settingImage" style="background-image: url({{newRecipe.image}})">
-						</div>		
-						<div class="box-wrapper">
-							<div class="small-form">
-								<h3>Total Time</h3>
-								<form >
-									<input class="new-total-time" type="text" ng-model="newRecipe.totalTime"></input>
-								</form>	
+					<form name="recipeForm">
+						<div class="left-box">
+							<div class="settingImage" style="background-image: url({{newRecipe.image}})">
+							</div>		
+							<div class="box-wrapper">
+								<div class="small-form">
+									<h3>Total Time</h3>
+									<input class="new-total-time" name="totalTime" type="text" ng-model="newRecipe.totalTime" required></input>
+								</div>	
+								<div class="small-form">						
+									<h3>Number of Servings</h3>
+									<input class="new-number-servings" name="totalTime" type="number" ng-model="newRecipe.servings" min="1" required></input>	
+								</div>
+								<div class="small-form">						
+									<h3>Course</h3>
+								    <select name="courseSelect" class="course" ng-model="newRecipe.course" required>
+								      <option value="Breakfast">Breakfast</option>
+								      <option value="Lunch">Lunch</option>
+								      <option value="Dinner">Dinner</option>
+								      <option value="Desert">Desert</option>
+								      <option value="Appetizers">Appetizers</option>
+								    </select>	
+								</div>	
+								<div class="small-form">						
+									<h3>Cuisine</h3>
+								    <select name="cuisineSelect" class="course" ng-model="newRecipe.cuisine" required>
+								      <option value="American">American</option>
+								      <option value="Chinese">Chinese</option>
+								      <option value="French">French</option>
+								      <option value="Greek">Greek</option>
+								      <option value="Indian">Indian</option>
+								      <option value="Italian">Italian</option>
+								      <option value="Japanese">Japanese</option>
+								      <option value="Mediterranean">Mediterranean</option>
+								      <option value="Mexican">Mexican</option>
+								      <option value="Thai">Thai</option>
+								      <option value="Vietnamese">Vietnamese</option>
+								    </select>	
+								</div>															
 							</div>	
-							<div class="small-form">						
-								<h3>Number of Servings</h3>
-								<form>
-									<input class="new-number-servings" type="number" ng-model="newRecipe.servings"></input>
-								</form>		
-							</div>
-							<div class="small-form">						
-								<h3>Course</h3>
-							    <select name="singleSelect" class="course" ng-model="newRecipe.course">
-							      <option value="Breakfast">Breakfast</option>
-							      <option value="Lunch">Lunch</option>
-							      <option value="Dinner">Dinner</option>
-							      <option value="Desert">Desert</option>
-							      <option value="Appetizers">Appetizers</option>
-							    </select>	
-							</div>	
-							<div class="small-form">						
-								<h3>Cuisine</h3>
-							    <select name="singleSelect" class="course" ng-model="newRecipe.cuisine">
-							      <option value="American">American</option>
-							      <option value="Chinese">Chinese</option>
-							      <option value="French">French</option>
-							      <option value="Greek">Greek</option>
-							      <option value="Indian">Indian</option>
-							      <option value="Italian">Italian</option>
-							      <option value="Japanese">Japanese</option>
-							      <option value="Mediterranean">Mediterranean</option>
-							      <option value="Mexican">Mexican</option>
-							      <option value="Thai">Thai</option>
-							      <option value="Vietnamese">Vietnamese</option>
-							    </select>	
-							</div>															
-						</div>	
-					</div>
-					<h3>Title:</h3>
-					<form >
-						<input class="new-title" type="text" ng-model="newRecipe.title">
+						</div>
+						<h3>Title:</h3>
+						<input class="new-title" name="titleInput" type="text" ng-model="newRecipe.title" required>
+						<h3>Image Url:</h3>
+						<input placeholder="Example: https://www.planwallpaper.com/static/images/magic-of-blue-universe-images.jpg" class="new-title" name="urlImageInput" type="url" ng-model="newRecipe.image" required>
+						<h3>Ingrediants:</h3>			
+						<textarea placeholder="Put each ingredient on its own line" name="ingrediantsTextarea" class="new-ingredients" type="text" ng-model="newRecipe.ingredients " required></textarea>
+						<h3>Directions:</h3>
+						<textarea placeholder="Put each direction on its own line" name="directionsTextarea" class="new-directions" type="text" ng-model="newRecipe.directions" required></textarea>
+						<div class="save-button" ng-class="{grayout: recipeForm.$invalid}"ng-click="saveRecipe(newRecipe._id, recipeForm.$valid)">Save</div>
+						<div class="cancel-button" ng-click="cancel()">Cancel</div>
 					</form>
-					<h3>Image Url:</h3>
-					<form >
-						<input placeholder="Example: https://www.planwallpaper.com/static/images/magic-of-blue-universe-images.jpg" class="new-title" type="text" ng-model="newRecipe.image">
-					</form>		
-					<h3>Ingrediants:</h3>			
-					<form >
-						<textarea placeholder="Put each ingredient on its own line" class="new-ingredients" type="text" ng-model="newRecipe.ingredients"></textarea>
-					</form>	
-					<h3>Directions:</h3>
-					<form >
-						<textarea placeholder="Put each direction on its own line"class="new-directions" type="text" ng-model="newRecipe.directions"></textarea>
-					</form>
-					<div class="save-button" ng-click="saveRecipe(newRecipe._id)">Save</div>
-					<div class="cancel-button" ng-click="cancel()">Cancel</div>
 				</div>
 			</div>
 			<div ng-switch-when="displayRecipe">

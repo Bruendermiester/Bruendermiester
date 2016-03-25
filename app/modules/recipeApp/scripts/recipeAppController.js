@@ -56,46 +56,48 @@ angular.module('recipeApp', [])
 		$scope.view = null;
 	};
 
-	$scope.saveRecipe = function(id) {
+	$scope.saveRecipe = function(id, errCheck) {
+		
+		if(errCheck) {
+	    	var recipe =     
+	    	{
+		      "image": $scope.newRecipe.image,
+		      "title": $scope.newRecipe.title,
+		      "ingredients": ($scope.newRecipe.ingredients).split("\n"),
+		      "totalTime": $scope.newRecipe.totalTime,
+		      "directions": ($scope.newRecipe.directions).split("\n"),
+		      "servings": $scope.newRecipe.servings,
+		      "course": $scope.newRecipe.course,
+		      "cuisine": $scope.newRecipe.cuisine
+	    	};
 
-    	var recipe =     
-    	{
-	      "image": $scope.newRecipe.image,
-	      "title": $scope.newRecipe.title,
-	      "ingredients": ($scope.newRecipe.ingredients).split("\n"),
-	      "totalTime": $scope.newRecipe.totalTime,
-	      "directions": ($scope.newRecipe.directions).split("\n"),
-	      "servings": $scope.newRecipe.servings,
-	      "course": $scope.newRecipe.course,
-	      "cuisine": $scope.newRecipe.cuisine
-    	};
-
-    	if(id) {
-	    	var url = '/api/recipes/' + id ;
-	 	    $http({
-	 	    	method: 'PUT',
-	 	    	url: url,
-	 	    	headers: {
-	 	    		"Content-type": "application/json"
-	 	    	},
-	 	    	data: recipe
-	    	})
-	    	.then(function successCallBack(reponse) {
-	    		$scope.view = null;
-	    	});	
-    	}
-    	else {
-	    	var url = '/api/recipes';
-	 	    $http({
-	 	    	method: 'POST',
-	 	    	url: url,
-	 	    	data : recipe
-	    	})
-	    	.then(function successCallBack(reponse) {
-	    		$scope.view = null;
-	            $scope.recipes = reponse;
-	    	});		
-    	}
+	    	if(id) {
+		    	var url = '/api/recipes/' + id ;
+		 	    $http({
+		 	    	method: 'PUT',
+		 	    	url: url,
+		 	    	headers: {
+		 	    		"Content-type": "application/json"
+		 	    	},
+		 	    	data: recipe
+		    	})
+		    	.then(function successCallBack(reponse) {
+		    		$scope.view = null;
+		    	});	
+	    	}
+	    	else {
+		    	var url = '/api/recipes';
+		 	    $http({
+		 	    	method: 'POST',
+		 	    	url: url,
+		 	    	data : recipe
+		    	})
+		    	.then(function successCallBack(reponse) {
+		    		$scope.view = null;
+		            $scope.recipes = reponse.data;
+		    	});		
+	    	}
+	    }
 
 	};
 

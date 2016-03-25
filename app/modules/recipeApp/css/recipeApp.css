@@ -409,6 +409,22 @@ input {
 .flyout-menu .add-button {
     margin: 100px 0 0 97px;
 }
+.ng-touched.ng-invalid-required {
+    border-color: red;
+}
+.ng-dirty.ng-invalid {
+  border-color: red;
+}
+.ng-untouched.ng-invalid {
+    border-color: #ccc; 
+}
+.grayout {
+	background-color: #ccc;
+	cursor: auto;
+}
+.grayout:hover {
+	background-color: #ccc;
+}
 @media only screen and (max-width: 700px) {
 	.filter-bar {
 		display: none;
