@@ -1,39 +1,41 @@
 #page {
   background-color: #ccc
 }
-
 #mainRegion {
   height: 850px;
   width: 100%;
   background-color: #fff;
   margin: 0 auto;
-  border: 1px solid black
 }
-
 .nav-box {
   width: 300px;
   height: 500px;
   border: 1px solid #ccc;
-  float: left;
-  margin-top: 70px;
   transition: all .2s ease-in-out; 
-
+  float: left;
 }
-
 .nav-box:hover {
   transform: scale(1.1);
   -moz-box-shadow:    3px 3px 5px 6px #ccc;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;
   box-shadow:         3px 3px 5px 6px #ccc;
 }
-
 .resume {
-  margin-left: 20%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+  margin: 0 100px 100px 0;
 }
+.main-block {
+  margin: 0 auto;
+  width: 700px;
+  height: 500px;
+  padding-top: 120px;
+}
+@media only screen and (max-width: 700px) {
 
-.myWork {
-  margin: 70px 100px;
+  .main-block {
+    width: 300px
+  }
+
 }

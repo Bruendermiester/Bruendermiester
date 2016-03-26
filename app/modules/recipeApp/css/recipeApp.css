@@ -104,9 +104,8 @@ input:focus {
   height: 150px;
   border: 1px solid #ccc;
   float: left;
-  margin-top: 70px;
   transition: all .2s ease-in-out; 
-  margin: 25px;
+  margin: 25px 25px 25px 65px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;  
@@ -334,6 +333,7 @@ input:focus {
 	height: 20px;
 	float: left;
 	padding-left: 5px;
+    margin-bottom: 5px;
 }
 .course-select {
 	margin: 5px 0 0 20px;
