@@ -446,5 +446,42 @@ input {
 	.filter-button {
 		display: block;
 	}
+	.recipe-wrapper {
+		width: 350px;
+		height: auto;
+	}
+	.left-block {
+		float: none;
+		width: 300px;
+		height: 430px;
+	}
+	.ingredients-block {
+		width: 300px;
+		float: none;
+	}
+	.ingredients {
+		height: 32px;
+	}
+	.ingredients-block {
+		height: auto;
+	}
+	.directions-block {
+		width: 300px;
+		float: none;		
+		margin-top: 20px;
+		height: auto;
+	}
+	.directions {
+		width: 300px;
+		float: none;
+		height: 42px;
+	}
+	.recipe-wrapper h3 {
+		width: 300px;
+		margin-bottom: 10px;
+	}
+	.ingredients li {
+	    padding-bottom: 10px;
+	}
 }
 
