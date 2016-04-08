@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var uri = 'mongodb://localhost:27017/testing';
 var bodyParser = require('body-parser');
 
-mongoose.connect(uri);  
+//mongoose.connect(uri);  
 
 app.use(express.static(path));
 
