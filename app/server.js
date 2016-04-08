@@ -124,5 +124,3 @@ app.put('/api/recipes/:recipe_id', function(req, res) {
 		
 	})
 });
-
-app.listen(3000);
