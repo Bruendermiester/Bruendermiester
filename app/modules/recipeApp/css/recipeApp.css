@@ -223,7 +223,7 @@ input:focus {
 .cancel-button {
     width: 100px;
     height: 40px;
-    margin: 0 0 0 0px;
+    margin: -40px 0 0 0;
     border: 2px solid #ccc;
     background-color: #02394A;
     text-align: center;
@@ -239,7 +239,7 @@ input:focus {
 }
 .recipe-wrapper {
     width: 1250px;
-    height: 660px;
+    min-height: 660px;
 	margin: 50px auto;
 	border: 2px solid #036886;
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);	
@@ -261,7 +261,7 @@ input:focus {
 .remove-button {
     width: 100px;
     height: 40px;
-    margin: 0 0 0 0px;
+    margin: -40px 0 0 0;
     border: 2px solid #ccc;
     background-color: #02394A;
     text-align: center;
@@ -278,7 +278,7 @@ input:focus {
 .edit-button {
     width: 100px;
     height: 40px;
-    margin: 0 0 0 0px;
+    margin: -40px 0 0 0;
     border: 2px solid #ccc;
     background-color: #02394A;
     text-align: center;
@@ -287,7 +287,7 @@ input:focus {
     color: #FFF;
     cursor: pointer;
     border-radius: 10px;
-    float: left;	
+    float: left;
 }
 .edit-button:hover {
 	background-color: #036886;	
@@ -311,13 +311,13 @@ input:focus {
 }
 .ingredients-block {
 	width: 700px;
-    height: 175px;
-    float: left;
+	min-height: 275px;
+	margin: 71px 0 15px 320px;
 }
 .directions-block {
 	width: 800px;
-	height: 300px;
-	float: left;
+	margin-left: 320px;
+	min-height: 200px;
 }
 .directions-block h3 {
 	font-weight: bold;
@@ -331,7 +331,6 @@ input:focus {
 .directions {
 	width: 600px;
 	height: 20px;
-	float: left;
 	padding-left: 5px;
     margin-bottom: 5px;
 }
@@ -360,7 +359,6 @@ select {
 	text-transform: capitalize;
 	font-weight: bold;
     width: 350px;
-    float: left;
     padding-left: 5px;
 }
 textarea {
@@ -448,7 +446,6 @@ input {
 	}
 	.recipe-wrapper {
 		width: 350px;
-		height: auto;
 	}
 	.left-block {
 		float: none;
@@ -459,17 +456,16 @@ input {
 		width: 300px;
 		float: none;
 	}
-	.ingredients {
-		height: 32px;
-	}
 	.ingredients-block {
-		height: auto;
+		margin-top: 100px;
+		margin-left: 0;
 	}
 	.directions-block {
 		width: 300px;
 		float: none;		
 		margin-top: 20px;
-		height: auto;
+		margin-bottom: 100px;
+		margin-left: 0;
 	}
 	.directions {
 		width: 300px;
@@ -480,8 +476,22 @@ input {
 		width: 300px;
 		margin-bottom: 10px;
 	}
+	.recipe-wrapper .title-display {
+		width: 300px;
+		font-size: 20px;
+	}
 	.ingredients li {
 	    padding-bottom: 10px;
+	    width: 300px;
+	}
+	.cancel-button {
+    	float: none;
+	}
+	.remove-button {
+    	display: none;
+	}	
+	.edit-button {
+		display: none;
 	}
 }
 

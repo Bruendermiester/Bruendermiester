@@ -149,7 +149,7 @@
 						<h3>Directions:</h3>
 						<textarea placeholder="Put each direction on its own line" name="directionsTextarea" class="new-directions" type="text" ng-model="newRecipe.directions" required></textarea>
 						<div class="save-button" ng-class="{grayout: recipeForm.$invalid}"ng-click="saveRecipe(newRecipe._id, recipeForm.$valid)">Save</div>
-						<div class="cancel-button" ng-click="cancel()">Cancel</div>
+						<div class="cancel-button" ng-click="cancel()">Back</div>
 					</form>
 				</div>
 			</div>
@@ -189,7 +189,7 @@
 					</div>
 					<div class="edit-button" ng-click="openRecipe(newRecipe._id, 'makingRecipe')">Edit</div>
 					<div class="remove-button" ng-click="deleteRecipe(newRecipe._id)">Delete</div>
-					<div class="cancel-button" ng-click="cancel()">Cancel</div>					
+					<div class="cancel-button" ng-click="cancel()">Back</div>					
 				</div>
 			</div>			
 		</div>
