@@ -2,10 +2,10 @@ var express = require('express');
 var app = express();
 var path = '/Users/JonBr/Documents/GitHub/MeanStackWebsite2016/app';
 var mongoose = require('mongoose'); 
-var uri = 'mongodb://localhost:27017/testing';
+var uri = 'mongodb://<dbuser>:<dbpassword>@ds019980.mlab.com:19980/heroku_c13sjx0h';
 var bodyParser = require('body-parser');
 
-//mongoose.connect(uri);  
+mongoose.connect(uri);  
 
 app.use(express.static(path));
 
