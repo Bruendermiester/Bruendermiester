@@ -31,6 +31,8 @@ app.get('/', function(req, res) {
 
 app.get('/api/recipes', function(req, res) {
 
+	console.log("here")
+
 	var filterObject = {};
 
 	if(req.query.cuisine != 'undefined' && req.query.cuisine) {
