@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var path = '/Users/JonBr/Documents/GitHub/MeanStackWebsite2016/app';
+var path = __dirname;
 var mongoose = require('mongoose'); 
 var uri = 'mongodb://<dbuser>:<dbpassword>@ds019980.mlab.com:19980/heroku_c13sjx0h';
 var bodyParser = require('body-parser');
@@ -125,4 +125,5 @@ app.put('/api/recipes/:recipe_id', function(req, res) {
 	})
 });
 
-app.listen(process.env.PORT || 5000);
+console.log("Listening on Port: ", process.env.PORT);
+app.listen(process.env.PORT || 3000);
