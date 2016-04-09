@@ -5,7 +5,6 @@
   angular
   .module('myWebsite', [
     'myRoutes',
-    'slider',
     'recipeApp'
    ]);
 
