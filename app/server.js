@@ -124,3 +124,5 @@ app.put('/api/recipes/:recipe_id', function(req, res) {
 		
 	})
 });
+
+app.listen(process.env.PORT || 5000);
