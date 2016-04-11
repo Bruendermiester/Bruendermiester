@@ -311,13 +311,18 @@ input:focus {
 }
 .ingredients-block {
 	width: 700px;
-	min-height: 275px;
+	min-height: 200px;
 	margin: 71px 0 15px 320px;
+}
+.myWork {
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 .directions-block {
 	width: 800px;
 	margin-left: 320px;
 	min-height: 200px;
+	margin-bottom: 100px;
 }
 .directions-block h3 {
 	font-weight: bold;
