@@ -428,18 +428,18 @@ input {
 		display: none;
 	}
 	.card-wrapper {
-	    max-width: 440px;
+	    max-width: 940px;
 	}	
 	.full-card {
 		margin: 5px;
-		width: 200px;
-		height: 200px;
+		width: 450px;
+		height: 400px;
 	}
 	.recipe-image {
-		height: 200px;
+		height: 400px;
 	}
 	.recipe-title {
-		width: 200px;
+		width: 450px;
 	}	
 	.filter-button {
 		display: block;
@@ -492,6 +492,27 @@ input {
 	}	
 	.edit-button {
 		display: none;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+
+	.fullcard {
+		width: 150px;
+		height: 150px;
+	}
+	.recipe-image {
+		height: 150px;
+	}
+	.recipe-title {
+		width: 150px;
+	}
+	.app-home {
+		width: 155px;
+	}
+	#header h2 {
+		font-size: 16px;
+		margin-top: 6px;
 	}
 }
 
