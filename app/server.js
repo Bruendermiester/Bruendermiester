@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var path = __dirname;
 var mongoose = require('mongoose'); 
-var uri = 'mongodb://<jonbruenderman@hotmail.com>:<brokensword=99>@ds019980.mlab.com:19980/heroku_c13sjx0h';
+var uri = 'mongodb://heroku_c13sjx0h:brokensword=99@ds019980.mlab.com:19980/heroku_c13sjx0h';
 var bodyParser = require('body-parser');
 
 mongoose.connect(uri);  
@@ -31,7 +31,7 @@ app.get('/', function(req, res) {
 
 app.get('/api/recipes', function(req, res) {
 
-	console.log("here");
+	
 
 	var filterObject = {};
 
@@ -41,8 +41,9 @@ app.get('/api/recipes', function(req, res) {
 	if(req.query.course != 'undefined' && req.query.course) {
 		filterObject.course = req.query.course;
 	}
-	
+	console.log("here");
 	apiCall.find(filterObject, function(err, recipe) {
+		console.log("try");
 		if(err){
 			res.send(err)
 		}
