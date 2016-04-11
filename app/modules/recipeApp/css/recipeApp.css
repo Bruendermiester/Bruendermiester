@@ -508,7 +508,7 @@ input {
 		height: 150px;
 	}
 	.recipe-title {
-		width: 150px;
+		display: none;
 	}
 	.app-home {
 		width: 155px;
