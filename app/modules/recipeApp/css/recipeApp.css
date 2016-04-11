@@ -497,7 +497,7 @@ input {
 
 @media only screen and (max-width: 400px) {
 
-	.fullcard {
+	.full-card {
 		width: 150px;
 		height: 150px;
 	}
