@@ -433,6 +433,9 @@ input {
 }
 
 @media only screen and (max-width: 1085px) {
+	.fa-5x {
+		font-size: 5em !important;
+	}	
 	.main-block {
 		padding-top: 20px;
 	}
