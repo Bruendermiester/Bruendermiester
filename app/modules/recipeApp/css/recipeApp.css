@@ -389,7 +389,7 @@ input {
 }
 .flyout-menu {
 	width: 300px;
-	left: -300;
+	left: -700;
 	height: 600px;
 	position: fixed;
 	z-index: 5;
@@ -436,7 +436,7 @@ input {
 		display: none;
 	}
 	.card-wrapper {
-	    max-width: 940px;
+	    max-width: 920px;
 	}	
 	.full-card {
 		margin: 5px;
@@ -447,10 +447,15 @@ input {
 		height: 400px;
 	}
 	.recipe-title {
-		width: 450px;
+		display: none;
 	}	
 	.filter-button {
 		display: block;
+		margin: 20px 65px 0 0;
+		width: 300px;
+		height: 100px;
+		border-radius: 75px;
+		font-size: 55px;
 	}
 	.recipe-wrapper {
 		width: 350px;
@@ -501,7 +506,46 @@ input {
 	.edit-button {
 		display: none;
 	}
-}
+	.flyout-menu {
+		width: 700px;
+		height: 1700px;
+	}
+	.searchBox {
+		height: 140px;
+		width: 600px;
+		border-radius: 120px;
+		padding-left: 45px;
+		font-size: 70px;
+	}
+	.flyour-menu .searchForm {
+		margin-right: 40px;
+	}
+	.flyout-menu .course-select {
+		margin: 115px 0 0 55px;
+	}
+	.course-select {
+		height: 140px;
+		width: 583px;
+		border-radius: 100px;
+	    font-size: 30px;
+	    padding-left: 30px;		
+	}
+	#header h2 {
+		font-size: 50px; 
+		margin-right: 25px;
+		padding-top: 35px;
+	}
+	.app-home {
+	    width: 350px;
+    	height: 140px;
+	}
+	#header {
+		height: 140px;
+	}
+	.fa-bars {
+		margin: 30px 65px 0 0;
+	}
+}	
 
 @media only screen and (max-width: 400px) {
 
