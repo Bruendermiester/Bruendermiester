@@ -7,8 +7,6 @@ var bodyParser = require('body-parser');
 
 mongoose.connect(uri);  
 
-console.log(mongoose.connection.readyState);
-
 app.use(express.static(path));
 
 app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
@@ -24,7 +22,8 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 	  directions: Array,
 	  servings: Number,
 	  course: String,
-	  cuisine: String
+	  cuisine: String,
+	  deletedFlag: Boolean
 	});
 
 app.get('/', function(req, res) {
@@ -32,8 +31,6 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/recipes', function(req, res) {
-
-	
 
 	var filterObject = {};
 
@@ -43,15 +40,13 @@ app.get('/api/recipes', function(req, res) {
 	if(req.query.course != 'undefined' && req.query.course) {
 		filterObject.course = req.query.course;
 	}
-	console.log("here");
-	console.log(mongoose.connection.readyState);
+	filterObject.deletedFlag = true;
 	apiCall.find(filterObject, function(err, recipe) {
-		console.log("try");
-		if(err){
+		if(err) {
 			res.send(err)
 		}
 		res.json(recipe);
-	})		
+	})
 
 });
 
@@ -66,6 +61,7 @@ app.post('/api/recipes', function(req, res) {
 		servings: req.body.servings,
 		course: req.body.course,
 		cuisine: req.body.cuisine,
+		deletedFlag: true,
 		done : true
 	}, function(err, recipe) {
 		if(err){
@@ -81,18 +77,28 @@ app.post('/api/recipes', function(req, res) {
 });
 
 app.delete('/api/recipes/:recipe_id', function(req, res) {
-	apiCall.remove({
-		_id : req.params.recipe_id
-	},function(err, recipe) {
-		if(err){
+	apiCall.findById(req.params.recipe_id ,function(err, recipe) {
+		if(err) {
 			res.send(err)
 		}
-		apiCall.find(function(err, recipe) {
-			if(err){
+
+		recipe.deletedFlag = false
+
+		recipe.save(function(err) {
+			if(err) {
 				res.send(err)
 			}
-			res.json(recipe);
-		})
+			var filterObject = {};
+
+			filterObject.deletedFlag = true;
+	
+			apiCall.find(filterObject, function(err, recipe) {
+				if(err) {
+					res.send(err)
+				}
+				res.json(recipe);
+			})
+		})	
 	})
 });
 
@@ -120,7 +126,8 @@ app.put('/api/recipes/:recipe_id', function(req, res) {
 		recipe.directions = req.body.directions,
 		recipe.servings = req.body.servings,
 		recipe.course = req.body.course,
-		recipe.cuisine = req.body.cuisine
+		recipe.cuisine = req.body.cuisine,
+		recipe.deletedFlag = true
 
 		recipe.save(function(err) {
 			if(err){
@@ -132,5 +139,5 @@ app.put('/api/recipes/:recipe_id', function(req, res) {
 	})
 });
 
-console.log("Listening on Port: ", process.env.PORT);
+console.log("Listening on Port: ", (process.env.PORT || 3000));
 app.listen(process.env.PORT || 3000);
