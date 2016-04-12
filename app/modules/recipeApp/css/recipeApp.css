@@ -428,6 +428,10 @@ input {
 .grayout:hover {
 	background-color: #ccc;
 }
+.fa-5x {
+	font-size: 2em !important;
+}
+
 @media only screen and (max-width: 1085px) {
 	.main-block {
 		padding-top: 20px;
