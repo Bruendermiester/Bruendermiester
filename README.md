@@ -26,4 +26,4 @@ Then in a browser go to `localhost:3000/#/`
 
 ## Deploying
 
-Deploying this app is through heroko. 
+Deploying this app is through heroko. It is set up so that you only need to merge your branch into master and it will auto deploy the site. You can also login to heroku and do it manually.
