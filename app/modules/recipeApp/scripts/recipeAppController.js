@@ -1,5 +1,5 @@
 angular.module('recipeApp', [])
-.controller('recipeAppController', function ($scope, $http) {
+.controller('recipeAppController', function ($scope, $http, $location, $anchorScroll) {
 
 	$scope.filterClicked = false;
 
@@ -33,9 +33,19 @@ angular.module('recipeApp', [])
 			})
 			.then(function successCallBack(reponse) {
 		        $scope.recipes = reponse.data;
-			});			
+			});
 		}
 	};
+
+   $scope.gotoTop = function() {
+    // set the location.hash to the id of
+    // the element you wish to scroll to.
+    $location.hash('top');
+
+    // call $anchorScroll()
+    $anchorScroll();
+  };
+
 
 	$scope.getFilteredRecipes = function(course, cuisine) {
 		var filterString = '?course=' + course + '&cuisine=' + cuisine;
@@ -57,9 +67,9 @@ angular.module('recipeApp', [])
 	};
 
 	$scope.saveRecipe = function(id, errCheck) {
-		
+
 		if(errCheck) {
-	    	var recipe =     
+	    	var recipe =
 	    	{
 		      "image": $scope.newRecipe.image,
 		      "title": $scope.newRecipe.title,
@@ -83,7 +93,7 @@ angular.module('recipeApp', [])
 		    	})
 		    	.then(function successCallBack(reponse) {
 		    		$scope.view = null;
-		    	});	
+		    	});
 	    	}
 	    	else {
 		    	var url = '/api/recipes';
@@ -95,7 +105,7 @@ angular.module('recipeApp', [])
 		    	.then(function successCallBack(reponse) {
 		    		$scope.view = null;
 		            $scope.recipes = reponse.data;
-		    	});		
+		    	});
 	    	}
 	    }
 
@@ -120,9 +130,9 @@ angular.module('recipeApp', [])
 	    			else{
 	    				newString = newString + $scope.newRecipe.ingredients[x] + "\n";
 	    			}
-	    			
+
 	    		}
-	    		$scope.newRecipe.ingredients = newString;    	
+	    		$scope.newRecipe.ingredients = newString;
 
 	    		newString = "";
 	    		for(var x = 0; x < $scope.newRecipe.directions.length; x++) {
@@ -133,9 +143,9 @@ angular.module('recipeApp', [])
 	    				newString = newString + $scope.newRecipe.directions[x] + "\n";
 	    			}
 	    		}
-	    		$scope.newRecipe.directions = newString;  
+	    		$scope.newRecipe.directions = newString;
     		}
-    	});		
+    	});
 	};
 
 	$scope.deleteRecipe	= function(id) {
@@ -146,7 +156,7 @@ angular.module('recipeApp', [])
     	})
     	.then(function successCallBack(reponse) {
     		$scope.view = null;
-    	});			
+    	});
 	};
 
 });
