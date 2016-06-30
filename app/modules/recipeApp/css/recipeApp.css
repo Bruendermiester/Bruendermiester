@@ -53,7 +53,7 @@ input:focus {
     margin: 10px;
 	float: left;
 	cursor: pointer;
-	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);	
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .full-card:hover .recipe-title{
     -webkit-transition: opacity .5s, -webkit-transform 2s;
@@ -67,7 +67,7 @@ input:focus {
 	border-bottom: 1px solid #ccc;
   	background-size: cover;
   	background-repeat: no-repeat;
-  	background-position: center center; 
+  	background-position: center center;
 }
 .recipe-title {
     position: relative;
@@ -78,24 +78,24 @@ input:focus {
     height: 40px;
     opacity: .5;
     padding-top: 0px;
-    color: #fff;	
+    color: #fff;
     text-transform: capitalize;
     -webkit-transition: opacity .5s, -webkit-transform 2s;
-    transition: opacity .5s, transform 2s;     
+    transition: opacity .5s, transform 2s;
 }
 .recipe-title h3{
 	text-align: center;
 	padding-top: 7px;
  	white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;   	
+    text-overflow: ellipsis;
     margin: 20px auto;
-    width: 90%;    
+    width: 90%;
 }
 .nav {
 	height: 0px;
  	-webkit-transition: height 1s, -webkit-transform 1s;
-    transition: height 1s, transform 1s;	
+    transition: height 1s, transform 1s;
     border-bottom: 1px solid #ccc;
     overflow: hidden;
 }
@@ -104,11 +104,11 @@ input:focus {
   height: 150px;
   border: 1px solid #ccc;
   float: left;
-  transition: all .2s ease-in-out; 
+  transition: all .2s ease-in-out;
   margin: 25px 25px 25px 65px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center center;  
+  background-position: center center;
 }
 .small-nav:hover {
   transform: scale(1.1);
@@ -129,11 +129,11 @@ input:focus {
     height: 800px;
 	margin: 50px auto;
 	border: 2px solid #036886;
-	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);	
-	padding: 25px;	
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	padding: 25px;
 	background-size: contain;
-	background-position: center center;  
-	background-image: url('../images/recipebg.png');	
+	background-position: center center;
+	background-image: url('../images/recipebg.png');
 }
 .left-box {
 	float: left;
@@ -150,7 +150,7 @@ input:focus {
 	background-color: #FFF;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center center;  
+	background-position: center center;
 }
 .new-title {
 	width: 800px;
@@ -218,7 +218,7 @@ input:focus {
     float: left;
 }
 .save-button:hover {
-	background-color: #036886;	
+	background-color: #036886;
 }
 .cancel-button {
     width: 100px;
@@ -235,17 +235,17 @@ input:focus {
     float: left;
 }
 .cancel-button:hover {
-	background-color: #036886;	
+	background-color: #036886;
 }
 .recipe-wrapper {
     width: 1250px;
     min-height: 660px;
 	margin: 50px auto;
 	border: 2px solid #036886;
-	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);	
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 	padding: 25px;
 	background-size: contain;
-	background-position: center center;  
+	background-position: center center;
 	background-image: url('../images/recipebg.png');
 }
 .display-image {
@@ -256,7 +256,7 @@ input:focus {
 	margin: 0 20px 20px 0;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center center;  	
+	background-position: center center;
 }
 .remove-button {
     width: 100px;
@@ -273,7 +273,7 @@ input:focus {
     float: left;
 }
 .remove-button:hover {
-	background-color: #036886;	
+	background-color: #036886;
 }
 .edit-button {
     width: 100px;
@@ -290,7 +290,7 @@ input:focus {
     float: left;
 }
 .edit-button:hover {
-	background-color: #036886;	
+	background-color: #036886;
 }
 .recipe-wrapper h3 {
 	font-size: 16px;
@@ -305,9 +305,9 @@ input:focus {
     text-transform: capitalize;
     margin: 5px 0 10px 0;
     float: left;
-    width: 840px;	
-    font-style: italic;   
-    padding-left: 5px; 
+    width: 840px;
+    font-style: italic;
+    padding-left: 5px;
 }
 .ingredients-block {
 	width: 700px;
@@ -360,7 +360,7 @@ select {
 }
 .ingredients li {
 	font-size: 15px;
-	font-style: italic;   
+	font-style: italic;
 	text-transform: capitalize;
 	font-weight: bold;
     width: 610px;
@@ -394,14 +394,14 @@ input {
 	position: fixed;
 	z-index: 5;
     -webkit-transition: left .5s, -webkit-transform 2s;
-    transition: left .5s, transform 2s;	
+    transition: left .5s, transform 2s;
     background-color: #012632;
     border-right: 2px solid #981C05;
 }
 .active {
 	left: 0;
     -webkit-transition: left .5s, -webkit-transform 2s;
-    transition: left .5s, transform 2s;		
+    transition: left .5s, transform 2s;
 }
 .flyout-menu .searchForm {
 	margin: 50px 50px 0 0;
@@ -419,7 +419,7 @@ input {
   border-color: red;
 }
 .ng-untouched.ng-invalid {
-    border-color: #ccc; 
+    border-color: #ccc;
 }
 .grayout {
 	background-color: #ccc;
@@ -432,130 +432,60 @@ input {
 	font-size: 2em !important;
 }
 
-@media only screen and (max-width: 1085px) {
-	.fa-5x {
-		font-size: 5em !important;
-	}	
-	.main-block {
-		padding-top: 20px;
-	}
-	.filter-bar {
-		display: none;
-	}
-	.card-wrapper {
-	    max-width: 920px;
-	}	
-	.full-card {
-		margin: 5px;
-		width: 450px;
-		height: 400px;
-	}
-	.recipe-image {
-		height: 400px;
-	}
-	.recipe-title {
-		display: none;
-	}	
-	.filter-button {
-		display: block;
-		margin: 20px 65px 0 0;
-		width: 300px;
-		height: 100px;
-		border-radius: 75px;
-		font-size: 55px;
-	}
-	.recipe-wrapper {
-		width: 350px;
-	}
-	.left-block {
-		float: none;
-		width: 300px;
-		height: 430px;
-	}
-	.ingredients-block {
-		width: 300px;
-		float: none;
-	}
-	.ingredients-block {
-		margin-top: 100px;
-		margin-left: 0;
-	}
-	.directions-block {
-		width: 300px;
-		float: none;		
-		margin-top: 20px;
-		margin-bottom: 100px;
-		margin-left: 0;
-	}
-	.directions {
-		width: 300px;
-		float: none;
-		height: 42px;
-	}
-	.recipe-wrapper h3 {
-		width: 300px;
-		margin-bottom: 10px;
-	}
-	.recipe-wrapper .title-display {
-		width: 300px;
-		font-size: 20px;
-	}
-	.ingredients li {
-	    padding-bottom: 10px;
-	    width: 300px;
-	}
-	.cancel-button {
-    	float: none;
-	}
-	.remove-button {
-    	display: none;
-	}	
-	.edit-button {
-		display: none;
-	}
-	.flyout-menu {
-		width: 700px;
-		height: 1700px;
-	}
-	.searchBox {
-		height: 140px;
-		width: 600px;
-		border-radius: 120px;
-		padding-left: 45px;
-		font-size: 70px;
-	}
-	.flyour-menu .searchForm {
-		margin-right: 40px;
-	}
-	.flyout-menu .course-select {
-		margin: 115px 0 0 55px;
-	}
-	.course-select {
-		height: 140px;
-		width: 583px;
-		border-radius: 100px;
-	    font-size: 30px;
-	    padding-left: 30px;		
-	}
-	#header h2 {
-		font-size: 50px; 
-		margin-right: 25px;
-		padding-top: 35px;
-	}
-	.app-home {
-	    width: 350px;
-    	height: 140px;
-	}
-	#header {
-		height: 140px;
-	}
-	.fa-bars {
-		margin: 30px 65px 0 0;
-	}
-}	
-
 @media only screen and (max-width: 400px) {
+  .recipe-wrapper {
+    width: 350px;
+  }
+  .left-block {
+    float: none;
+    width: 300px;
+    height: 430px;
+  }
+  .ingredients-block {
+    width: 300px;
+    float: none;
+  }
+  .ingredients-block {
+    margin-top: 100px;
+    margin-left: 0;
+  }
+  .directions-block {
+    width: 300px;
+    float: none;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    margin-left: 0;
+  }
+  .directions {
+    width: 300px;
+    float: none;
+    height: 42px;
+  }
+  .recipe-wrapper h3 {
+    width: 300px;
+    margin-bottom: 10px;
+  }
+  .recipe-wrapper .title-display {
+    width: 300px;
+    font-size: 20px;
+  }
+  .ingredients li {
+      padding-bottom: 10px;
+      width: 300px;
+  }
+  .cancel-button {
+      float: none;
+  }
+  .remove-button {
+      display: none;
+  }
+  .edit-button {
+    display: none;
+  }
 
+  .filter-bar {
+    display: none;
+  }
 	.filter-button {
 		display: block;
 		margin: 15px 10px 0 0;
@@ -565,8 +495,8 @@ input {
 		font-size: 16px;
 	}
 	.full-card {
-		width: 150px;
-		height: 150px;
+		width: 140px;
+		height: 140px;
 	}
 	.recipe-image {
 		height: 150px;
@@ -605,17 +535,17 @@ input {
 		height: 32px;
 		width: 185px;
 		border-radius: 25px;
-	    font-size: 16px;
-	    padding-left: 15px;		
+    font-size: 16px;
+    padding-left: 15px;
 	}
 	#header h2 {
-		font-size: 21px; 
+		font-size: 21px;
 		margin-right: 15px;
 		padding-top: 15px;
 	}
 	.app-home {
-	    width: 175px;
-    	height: 40px;
+    width: 175px;
+  	height: 40px;
 	}
 	#header {
 		height: 60px;
