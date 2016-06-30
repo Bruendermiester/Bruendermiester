@@ -5,10 +5,10 @@
 	  <div class="filter-button" ng-click="filterClicked = !filterClicked">Filter</div>
 	</div>
 
-	<div class="flyout-menu" ng-class="{active: filterClicked}">	
+	<div class="flyout-menu" ng-class="{active: filterClicked}">
 		<form class="searchForm">
 			<input class="searchBox" placeholder="Search" ng-model="searchText"></input>
-		</form>	
+		</form>
 		<form class="courseForm">
 		    <select name="singleSelect" class="course-select" ng-model="filterCourse" ng-change="getFilteredRecipes(filterCourse, filterCuisine)" >
 		      <option value="" disabled selected>Course</option>
@@ -18,7 +18,7 @@
 		      <option value="Dinner">Dinner</option>
 		      <option value="Desert">Desert</option>
 		      <option value="Appetizers">Appetizers</option>
-		    </select>	
+		    </select>
 	    </form>
 		<form class="cuisineForm">
 		    <select name="singleSelect" class="course-select" ng-model="filterCuisine" ng-change="getFilteredRecipes(filterCourse, filterCuisine)" >
@@ -35,27 +35,27 @@
 		      <option value="Mexican">Mexican</option>
 		      <option value="Thai">Thai</option>
 		      <option value="Vietnamese">Vietnamese</option>
-		    </select>	
-	    </form>			    			    			    	
+		    </select>
+	    </form>
 	</div>
 
-	<div class="recipeBody">
+	<div class="recipeBod">
 		<div class="nav" ng-class="{showNav: navClick}">
 			<div class="middleNav">
 				<a class="small-nav" href="#/resume" style="background-image: url('modules/resume/images/resumeImage.png')"> </a>
 <!-- 				<a class="small-nav" href="#/myWork" style="background-image: url('modules/mainPage/images/myWork.png')"></a> -->
-				<a class="small-nav" href="#/" style=""></a>		
+				<a class="small-nav" href="#/" style=""></a>
 			 </div>
 		</div>
 		<div ng-switch on="view">
-			<div ng-switch-default>
+			<div ng-switch-default ng-init="gotoTop()">
 				<div class="filter-bar">
 					<div class="add-button" ng-click="addRecipe()">
 						New Recipe
-					</div>		
+					</div>
 					<form class="searchForm">
 						<input class="searchBox" placeholder="Search" ng-model="searchText"></input>
-					</form>	
+					</form>
 					<form class="courseForm">
 					    <select name="singleSelect" class="course-select" ng-model="filterCourse" ng-change="getFilteredRecipes(filterCourse, filterCuisine)" >
 					      <option value="" disabled selected>Course</option>
@@ -65,7 +65,7 @@
 					      <option value="Dinner">Dinner</option>
 					      <option value="Desert">Desert</option>
 					      <option value="Appetizers">Appetizers</option>
-					    </select>	
+					    </select>
 				    </form>
 					<form class="cuisineForm">
 					    <select name="singleSelect" class="course-select" ng-model="filterCuisine" ng-change="getFilteredRecipes(filterCourse, filterCuisine)" >
@@ -82,8 +82,8 @@
 					      <option value="Mexican">Mexican</option>
 					      <option value="Thai">Thai</option>
 					      <option value="Vietnamese">Vietnamese</option>
-					    </select>	
-				    </form>					    			    
+					    </select>
+				    </form>
 				</div>
 				<div class="card-wrapper" ng-init="getRecipes()">
 					<div ng-repeat="card in recipes | filter:searchText">
@@ -92,24 +92,24 @@
 							<div class="recipe-title"><h3>{{card.title}}</h3></div>
 						</div>
 					</div>
-				</div>				
-			</div>		
+				</div>
+			</div>
 			<div ng-switch-when="makingRecipe">
 				<div class="form-wrapper">
 					<form name="recipeForm">
 						<div class="left-box">
 							<div class="settingImage" style="background-image: url({{newRecipe.image}})">
-							</div>		
+							</div>
 							<div class="box-wrapper">
 								<div class="small-form">
 									<h3>Total Time</h3>
 									<input class="new-total-time" name="totalTime" type="text" ng-model="newRecipe.totalTime" required></input>
-								</div>	
-								<div class="small-form">						
-									<h3>Number of Servings</h3>
-									<input class="new-number-servings" name="totalTime" type="number" ng-model="newRecipe.servings" min="1" required></input>	
 								</div>
-								<div class="small-form">						
+								<div class="small-form">
+									<h3>Number of Servings</h3>
+									<input class="new-number-servings" name="totalTime" type="number" ng-model="newRecipe.servings" min="1" required></input>
+								</div>
+								<div class="small-form">
 									<h3>Course</h3>
 								    <select name="courseSelect" class="course" ng-model="newRecipe.course" required>
 								      <option value="Breakfast">Breakfast</option>
@@ -117,9 +117,9 @@
 								      <option value="Dinner">Dinner</option>
 								      <option value="Desert">Desert</option>
 								      <option value="Appetizers">Appetizers</option>
-								    </select>	
-								</div>	
-								<div class="small-form">						
+								    </select>
+								</div>
+								<div class="small-form">
 									<h3>Cuisine</h3>
 								    <select name="cuisineSelect" class="course" ng-model="newRecipe.cuisine" required>
 								      <option value="American">American</option>
@@ -133,15 +133,15 @@
 								      <option value="Mexican">Mexican</option>
 								      <option value="Thai">Thai</option>
 								      <option value="Vietnamese">Vietnamese</option>
-								    </select>	
-								</div>															
-							</div>	
+								    </select>
+								</div>
+							</div>
 						</div>
 						<h3>Title:</h3>
 						<input class="new-title" name="titleInput" type="text" ng-model="newRecipe.title" required>
 						<h3>Image Url:</h3>
 						<input placeholder="Example: https://www.planwallpaper.com/static/images/magic-of-blue-universe-images.jpg" class="new-title" name="urlImageInput" type="url" ng-model="newRecipe.image" required>
-						<h3>Ingrediants:</h3>			
+						<h3>Ingrediants:</h3>
 						<textarea placeholder="Put each ingredient on its own line" name="ingrediantsTextarea" class="new-ingredients" type="text" ng-model="newRecipe.ingredients " required></textarea>
 						<h3>Directions:</h3>
 						<textarea placeholder="Put each direction on its own line" name="directionsTextarea" class="new-directions" type="text" ng-model="newRecipe.directions" required></textarea>
@@ -150,29 +150,29 @@
 					</form>
 				</div>
 			</div>
-			<div ng-switch-when="displayRecipe">
-				<div class="recipe-wrapper">
+			<div ng-switch-when="displayRecipe" >
+				<div class="recipe-wrapper" ng-init="gotoTop()">
 					<div class="left-block">
 						<div class="display-image" style="background-image: url({{newRecipe.image}})"></div>
 						<div class="small-form">
 							<h3>Total Time</h3>
 							<h2>{{newRecipe.totalTime}}</h2>
-						</div>	
+						</div>
 						<div class="small-form">
 							<h3>Number of Servings</h3>
 							<h2>{{newRecipe.servings}}</h2>
-						</div>	
+						</div>
 						<div class="small-form">
 							<h3>Course</h3>
 							<h2>{{newRecipe.course}}</h2>
-						</div>	
+						</div>
 						<div class="small-form">
 							<h3>Cuisine</h3>
 							<h2>{{newRecipe.cuisine}}</h2>
-						</div>								
+						</div>
 					</div>
 					<h2 class="title-display" >{{newRecipe.title}}</h2>
-					<h3>Ingrediants:</h3>	
+					<h3>Ingrediants:</h3>
 					<div class="ingredients-block">
 						<div class="ingredients" ng-repeat="row in newRecipe.ingredients">
 							<li>{{row}}</li>
@@ -186,9 +186,9 @@
 					</div>
 					<div class="edit-button" ng-click="openRecipe(newRecipe._id, 'makingRecipe')">Edit</div>
 					<div class="remove-button" ng-click="deleteRecipe(newRecipe._id)">Delete</div>
-					<div class="cancel-button" ng-click="cancel()">Back</div>					
+					<div class="cancel-button" ng-click="cancel()">Back</div>
 				</div>
-			</div>			
+			</div>
 		</div>
 	</div>
 </div>
