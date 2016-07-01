@@ -1,0 +1,109 @@
+#mywork-wrapper {
+  height: 922px;
+  max-width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+}
+.signals-slide {
+  width: 500px;
+  height: 700px;
+  border: 1px solid #ccc;
+  margin: 50px 63px;
+  float: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.box {
+  width: 250px;
+  height: 331px;
+  border: 1px solid #ccc;
+  float: left;
+  margin-top: 50px;
+  margin-left: 35px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.column {
+  width: 33%;
+  height: 1000px;
+  float: left;
+}
+
+nav {
+  text-align: center;
+  display: block;
+  position: absolute;
+  z-index: 1002;
+  left: 0;
+  bottom: -4px;
+  right: 0;
+  height: 48px;
+}
+
+.nonDraggableImage {
+  -webkit-user-drag: none;
+}
+
+.nav .wrapper {
+  margin: 0 auto;
+  width: 100%;
+  padding: 1em 0 .8em;
+}
+
+.nav ul {
+  margin: 0;
+  width: 100%;
+}
+
+.nav .dot, .nav .dot a {
+  display: inline-block;
+  zoom: 1;
+}
+
+.dots .dot {
+  position: relative;
+  top: -160px;
+  left: -38px;
+  width: 15px;
+  height: 15px;
+  margin: 0 8px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: #FFF;
+  border: 1px solid transparent;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.25s, border-color 0.25s;
+  -moz-transition: background-color 0.25s, border-color 0.25s;
+  transition: background-color 0.25s, border-color 0.25s;
+}
+
+.dots .dot.active {
+  border-color: #FFF;
+  background-color: transparent;
+}
+
+.slide-animation {
+  -webkit-transition: 1s linear all;
+  -moz-transition: 1s linear all;
+  -o-transition: 1s linear all;
+  transition: 1s linear all;
+  display: block !important;
+}
+.animation-fade.ng-hide-add,
+.animation-fade.ng-hide-remove.ng-hide-remove-active {
+     opacity: 1;
+ }
+.animation-fade.ng-hide-add.ng-hide-add-active,
+.animation-fade.ng-hide-remove {
+     opacity: 0;
+     position: absolute;
+}
