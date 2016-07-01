@@ -35,7 +35,6 @@ angular.module('slider', ['ngAnimate'])
 		};
 		$scope.next();
 
-
     })
 	.animation('.slide-animation', function () {
 	        return {
