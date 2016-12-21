@@ -1,17 +1,19 @@
-#page {
-  background-color: #ccc
+body {
+  background-image: url('../images/background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
 }
 #mainRegion {
   height: 850px;
   width: 100%;
-  background-color: #fff;
   margin: 0 auto;
 }
 .nav-box {
   width: 300px;
   height: 500px;
-  border: 1px solid #ccc;
-  transition: all .2s ease-in-out; 
+  border: 1px solid #CCC;
+  transition: all .2s ease-in-out;
   float: left;
 }
 .nav-box:hover {
@@ -28,14 +30,25 @@
 }
 .main-block {
   margin: 0 auto;
-  width: 700px;
+  width: 1110px;
   height: 500px;
-  padding-top: 120px;
+  padding-top: 220px;
+  color: #FFF;
+  text-align: center;
+}
+.main-block h1 {
+  font-size: 60px;
 }
 @media only screen and (max-width: 700px) {
 
   .main-block {
     width: 300px
+  }
+  .main-block h1 {
+    font-size: 32px;
+  }
+  .main-block h3 {
+    font-size: 15px;
   }
 
 }

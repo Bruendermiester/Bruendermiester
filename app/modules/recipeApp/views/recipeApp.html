@@ -1,8 +1,13 @@
 <div class="wrapper" ng-controller="recipeAppController">
 	<div id="header">
-	  <div class="app-home" ng-click="cancel()"><h2>Bruendermiester</h2></div>
-	  <i class="fa fa-bars fa-5x" ng-click="navFunction()"></i>
-	  <div class="filter-button" ng-click="filterClicked = !filterClicked">Filter</div>
+	  <h2>Jonathan Bruenderman</h2>
+	  <div class="link-block">
+	    <a>Contact me</a>
+	    <a href="#/recipeApp">Cook Book</a>
+	    <a href="#/resume" >Resume</a>
+	    <a>About Me</a>
+	    <a href="#/">Home</a>
+	  </div>
 	</div>
 
 	<div class="flyout-menu" ng-class="{active: filterClicked}">

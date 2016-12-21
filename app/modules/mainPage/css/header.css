@@ -1,7 +1,7 @@
 #header {
   height: 60px;
   width: 100%;
-  background-color: #02394A;
+  background-color: #000;
   border-bottom: 2px solid #981C05;
 }
 #header h2 {
@@ -12,6 +12,22 @@
   padding-top: 15px;
   font-style: italic;
   font-weight: normal;
+  float: left;
+}
+#header .link-block {
+  float: right;
+  margin-right: 250px;
+}
+#header .link-block a {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 15px;
+  font-style: italic;
+  font-weight: normal;
+  float: right;
+  cursor: pointer;
+  margin-right: 15px;
 }
 .fa-bars {
 	color: #FFF;
