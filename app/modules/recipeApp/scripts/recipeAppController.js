@@ -1,7 +1,15 @@
 angular.module('recipeApp', [])
-.controller('recipeAppController', function ($scope, $http, $location, $anchorScroll) {
+.controller('recipeAppController', function ($scope, $http, $location, $anchorScroll, $window) {
 
 	$scope.filterClicked = false;
+
+	if(window.innerWidth > 700){$scope.navLinkClick = !$scope.navLinkClick;}
+
+
+	$scope.navLinkFunction = function() {
+		$scope.navLinkClick = !$scope.navLinkClick;
+	};
+
 
 	$scope.getRecipes = function(filterString) {
 

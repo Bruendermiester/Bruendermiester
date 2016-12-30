@@ -1,7 +1,9 @@
 <div class="wrapper" ng-controller="recipeAppController">
+
+	<div class="menuBar"><i class="fa fa-bars fa-5x" ng-click="navLinkFunction()"></i></div>
 	<div id="header">
 	  <h2>Jonathan Bruenderman</h2>
-	  <div class="link-block">
+	  <div  ng-show="navLinkClick"class="link-block">
 	    <a>Contact me</a>
 	    <a href="#/recipeApp">Cook Book</a>
 	    <a href="#/resume" >Resume</a>

@@ -1,6 +1,7 @@
-<div id="header">
+<div id="header" ng-controller="mainPageController">
   <h2>Jonathan Bruenderman</h2>
-  <div class="link-block">
+  <div class="menuBar"><i class="fa fa-bars fa-5x" ng-click="navFunction()"></i></div>
+  <div ng-show="navClick" class="link-block">
     <a>Contact me</a>
     <a href="#/recipeApp">Cook Book</a>
     <a href="#/resume" >Resume</a>

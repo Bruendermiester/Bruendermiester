@@ -11,7 +11,7 @@
     $routeProvider
     .when('/', {
      templateUrl: 'modules/mainPage/views/mainPage.html',
-     controler: 'mainController'
+     controler: 'mainPageController'
     })
     .when('/resume', {
      templateUrl: 'modules/resume/views/resume.html',
