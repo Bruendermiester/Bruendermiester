@@ -20,9 +20,11 @@ Creator: Jonathan Bruenderman
 
 ## Running Locally
 
-Pull down github repo and navigate to the app folder. 
-Then in a console run the command `node server`. 
-Then in a browser go to `localhost:3000/#/` 
+Pull down github repo and navigate to the folder. 
+Download the latest version of node if you don't have it.
+Run `npm install`
+Run the command `node server` from the app folder.
+Then in a browser go to `localhost:3000` 
 
 ## Deploying
 

@@ -1,9 +1,7 @@
 #resume-wrapper {
   height: auto;
   width: 100%;
-  
   margin: 0 auto;
-  border: 1px solid black
 }
 #center {
   margin-left: 35px;
@@ -11,7 +9,6 @@
 #wrapper-resume {
   width: 900px;
   margin: 0 auto;
-  border: 1px solid #CCC;
   background-color: #FFF;
 }
 

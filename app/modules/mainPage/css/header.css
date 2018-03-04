@@ -1,8 +1,8 @@
 #header {
-  height: 60px;
   width: 100%;
-  background-color: #000;
-  border-bottom: 2px solid #981C05;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 #header h2 {
   color: #fff;
@@ -16,18 +16,19 @@
 }
 #header .link-block {
   float: right;
-  margin-right: 250px;
+  margin: 50px 200px 0 0;
+  height: 60px;
 }
 #header .link-block a {
   color: #fff;
-  font-size: 18px;
+  font-size: 25px;
   text-align: center;
   padding-top: 15px;
   font-style: italic;
   font-weight: normal;
   float: right;
   cursor: pointer;
-  margin-right: 15px;
+  margin-right: 50px;
 }
 .fa-bars {
 	color: #FFF;
@@ -42,7 +43,7 @@
     display: none;
   }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
 
   .menuBar {
     display: block;

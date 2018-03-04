@@ -96,7 +96,6 @@ input:focus {
 	height: 0px;
  	-webkit-transition: height 1s, -webkit-transform 1s;
     transition: height 1s, transform 1s;
-    border-bottom: 1px solid #ccc;
     overflow: hidden;
 }
 .small-nav {
