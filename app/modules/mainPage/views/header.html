@@ -1,11 +1,13 @@
 <div id="header" ng-controller="mainPageController">
-  <h2>Jonathan Bruenderman</h2>
+  <div class="logo"></div>
   <div class="menuBar"><i class="fa fa-bars fa-5x" ng-click="navFunction()"></i></div>
   <div ng-show="navClick" class="link-block">
-    <a>Contact me</a>
-    <a href="#/recipeApp">Cook Book</a>
-    <a href="#/resume" >Resume</a>
-    <a>About Me</a>
-    <a href="#/">Home</a>
+    <ul> 
+      <li><a href="#/">Home</a></li>
+      <li><a>About Me</a></li>
+      <li><a href="#/resume" >Resume</a></li>
+      <li><a href="#/recipeApp">Cook Book</a></li>
+      <li><a>Contact me</a></li>
+    </ul>
   </div>
 </div>

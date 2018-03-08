@@ -37,7 +37,7 @@ body {
 .main-block h1 {
   font-size: 50px;
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
 
   .main-block {
     width: 300px
@@ -47,6 +47,15 @@ body {
   }
   .main-block h3 {
     font-size: 15px;
+  }
+  #header .link-block {
+    margin-right: 50px;
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #header .link-block {
+    display: none;
   }
 
 }
