@@ -1,8 +1,6 @@
 #header {
   width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  display: block;
 }
 #header h2 {
   color: #fff;
@@ -34,19 +32,17 @@
 }
 .fa-bars {
 	color: #FFF;
-	float: right;
-	width: 40px;
-	height: 40px;
-	margin: 15px 20px 0 0;
 	cursor: pointer;
 }
 .logo {
   background-image: url('../images/Logo.png');
   width: 50px;
   height: 50px;
+  float: left;
 }
 .menuBar {
   display: none;
+  margin: 10px;
 }
 li {
   display: inline-block;
@@ -57,6 +53,11 @@ li {
 
   .menuBar {
     display: block;
+    float: left;
   }
+  .logo {
+    float: right;
+  }
+
 }
 

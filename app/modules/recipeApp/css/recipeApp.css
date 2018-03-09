@@ -534,8 +534,8 @@ input {
 		height: 32px;
 		width: 185px;
 		border-radius: 25px;
-    font-size: 16px;
-    padding-left: 15px;
+		font-size: 16px;
+		padding-left: 15px;
 	}
 	#header h2 {
 		font-size: 21px;
@@ -548,9 +548,6 @@ input {
 	}
 	#header {
 		height: 60px;
-	}
-	.fa-bars {
-		margin: 15px 0 0 0;
 	}
 	.fa-5x {
 		font-size: 2em !important;

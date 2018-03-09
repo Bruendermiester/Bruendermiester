@@ -1,8 +1,12 @@
-body {
+#mainWrapper {
   background-image: url('../images/background.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-position: center center;
+  background-position: center center; 
+  -webkit-transition: left 1s; /* Safari */
+  transition: left 1s;
+  position: relative;
+  left: 0;
 }
 #mainRegion {
   height: 850px;
